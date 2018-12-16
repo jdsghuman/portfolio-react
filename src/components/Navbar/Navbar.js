@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -15,12 +16,13 @@ class Navbar extends Component {
   render() {
     return (
       <nav>
+        <div className="nav__primary">
         <div>
           <Link to="/">
-            <img src="/images/JD-Develop.png" alt="Logo" />
+            <img src="/images/JD-Develop-white.png" alt="Logo" />
           </Link>
         </div>
-        <div>
+        <div className="menu--desktop">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -33,10 +35,11 @@ class Navbar extends Component {
             </li>
             <li>
               <Link to="/resume">
-                <button>Resume</button>
+                <Button>Resume</Button>
               </Link>
             </li>
           </ul>
+        </div>
         </div>
       </nav>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
+import Container from '../Container/Container';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
@@ -10,7 +11,10 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Navbar />
+          <React.Fragment>
+            <Navbar />
+            <Container />
+          </React.Fragment>
         </Router>
       </div>
     );

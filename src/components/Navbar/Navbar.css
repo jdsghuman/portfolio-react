@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Mono');
 
 nav {
+  background-color: rgb(3, 31, 37);
+}
+
+.nav__primary {
   display: flex;
   height: 100px;
   justify-content: space-between;
@@ -8,9 +12,8 @@ nav {
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 1000px;
   font-family: 'PT Mono', monospace;
-  /* background-color: aqua; */
   overflow: hidden;
 }
 
@@ -25,31 +28,27 @@ ul {
 }
 
 li {
-  font-size: .7rem;
+  font-size: .8rem;
   list-style: none;
-  margin-left: 20px;
-  letter-spacing: .2px;
+  margin-left: 30px;
+  letter-spacing: 1.5px;
 }
 
 a {
   text-decoration: none;
-  color: #333333;
+  color: #ffffff;
+  transition: all .2s;
 }
 
-a:hover {
-  color: #888888;
+li:not(:last-child) a:hover {
+  color: #2cbadb;
+  border-bottom: 1px solid #2cbadb;
+  padding-bottom: 6px;
 }
 
-button {
-  border: 1px solid #333333;
-  padding: 6px 9px;
-  cursor: pointer;
-  transform: translateY(-22%);
-  font-family: 'PT Mono', monospace;
-  transition: .2s all linear;
+@media only screen and (max-width: 500px) {
+  .menu--desktop {
+    display: none;
+  }
 }
 
-button:hover {
-  color: #888888;
-  border: 1px solid #888888;
-}
