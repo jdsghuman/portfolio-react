@@ -10,7 +10,7 @@ class Home extends Component {
           <div className="large-hero__text-content">
           <p className="primary__intro">&#47;&#47; Hi, my name is</p>
           <p className="primary__name">JD Ghuman</p>
-          <p className="primary__description">I build software applications.</p>
+          <p className="primary__description">I build things with software.</p>
           <p className="primary__detail">I'm a software developer based out of Minneapolis, MN and build web applications for desktop and mobile.</p>
           <Button id="btn--dark">Contact Me</Button>
           </div>
