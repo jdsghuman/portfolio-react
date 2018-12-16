@@ -2,11 +2,10 @@
 
 .large-hero {
   position: relative;
-  min-height: 100vh;
 }
 
 .large-hero__text-content {
-    transform: translateY(40%);
+    transform: translateY(10%);
     left: 0;
     width: 100%;
 }
@@ -33,6 +32,10 @@ p {
   color: #2cbadb;
   font-size: 3rem;
   margin-top: 0;
+}
+
+.btn--dark {
+  margin-bottom: 80px;
 }
 
 .primary__detail {
