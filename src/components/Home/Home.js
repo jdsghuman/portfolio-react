@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 
 const btnStyle = {
-  marginBottom: '100px'
+  marginBottom: '100px',
+  border: '2px solid #2cbadb',
+  padding: '9px 14px',
+  fontSize: '1rem',
 }
 
 class Home extends Component {
