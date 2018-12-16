@@ -17,7 +17,7 @@ p {
 
 .primary__intro {
   margin-bottom: 0;
-  font-size: .9rem;
+  font-size: 1.2rem;
   letter-spacing: .2px;
   color: #2cbadb;
 }
@@ -29,7 +29,8 @@ p {
 }
 
 .primary__description {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
+  color: #2cbadb;
   font-size: 3rem;
   margin-top: 0;
 }
