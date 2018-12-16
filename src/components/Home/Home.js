@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 
 import './Home.css';
 
+const btnStyle = {
+  marginBottom: '100px',
+  border: '2px solid #2cbadb',
+  padding: '9px 14px',
+  fontSize: '1rem',
+}
+
 class Home extends Component {
 
   handleClick = () => {
@@ -20,7 +27,7 @@ class Home extends Component {
             <p className="primary__description">I build things with software.</p>
             <p className="primary__detail">I'm a software developer based out of Minneapolis, MN and build web applications for desktop and mobile.</p>
             <Link to="/projects">
-              <Button id="btn--dark" onClick={this.handleClick}>Projects</Button>
+              <Button style={btnStyle} onClick={this.handleClick}>Projects</Button>
             </Link>
           </div>
         </div>
