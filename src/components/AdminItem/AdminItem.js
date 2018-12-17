@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Button from '../Button/Button';
 
-class AdminTableDetail extends Component {
+class AdminItem extends Component {
 
   deleteProject = (id) => {
     console.log('clicked delete ', id);
@@ -12,12 +11,12 @@ class AdminTableDetail extends Component {
   render() {
     return (
       <tr>
-        <td>{this.props.name}</td>
+        <td>{this.props.adminData.name}</td>
         <td><button onClick={e => window.confirm('Are you sure you want to delete this project?') &&
-          this.deleteProject(this.props.id)}>Delete</button></td>
+          this.deleteProject(this.props.adminData.id)}>Delete</button></td>
       </tr>
     );
   }
 }
 
-export default connect()(AdminTableDetail);
+export default connect()(AdminItem);

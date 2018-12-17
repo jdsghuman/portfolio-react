@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Title from '../Title/Title';
 import Button from '../Button/Button';
 import { connect } from 'react-redux';
-import AdminTableDetail from '../AdminTableDetail/AdminTableDetail';
+import AdminItem from '../AdminItem/AdminItem';
 
 const btnForm = {
   marginBottom: '100px',
@@ -64,7 +64,8 @@ class Admin extends Component {
 
   render() {
     let projectDetail = this.props.projects.map(project => {
-      return <AdminTableDetail key={project.id} id={project.id} name={project.name} />
+      // return <AdminItem key={project.id} id={project.id} name={project.name} />
+      return <AdminItem key={project.id} adminData={project} />
     })
     return (
       <div className="wrapper">

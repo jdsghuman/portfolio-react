@@ -15,11 +15,13 @@ class Project extends Component {
   }
 
   render() {
+    let projects = this.props.projects;
     return (
       <div className="wrapper">
         <Title>PROJECTS</Title>
         {/* Loop over projects returned from DB */}
-        {this.props.project.map(p => {
+        {projects.length > 0 ? (
+          projects.map(p => {
           return <ProjectItem 
                     key={p.id} 
                     name={p.name} 
@@ -29,7 +31,11 @@ class Project extends Component {
                     url={p.thumbnail} 
                     tag={p.tag} 
                     />
-        })}
+        })
+        ) : (
+          <p>No projects available</p>
+        )
+      }
       </div>
     );
   }
@@ -37,7 +43,7 @@ class Project extends Component {
 
 const mapStateToProps = reduxStore => {
   return {
-    project: reduxStore.projects
+    projects: reduxStore.projects
   }
 }
 
