@@ -21,15 +21,10 @@ class Project extends Component {
         <Title>PROJECTS</Title>
         {/* Loop over projects returned from DB */}
         {projects.length > 0 ? (
-          projects.map(p => {
+          projects.map(project => {
           return <ProjectItem 
-                    key={p.id} 
-                    name={p.name} 
-                    description={p.description} 
-                    github={p.github} 
-                    website={p.website} 
-                    url={p.thumbnail} 
-                    tag={p.tag} 
+                    key={project.id} 
+                    projectData={project}
                     />
         })
         ) : (
