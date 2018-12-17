@@ -16,7 +16,8 @@ import createSagaMiddleware from 'redux-saga';
 function* fetchProjects() {
     try {
         const projectResponse = yield call(axios.get, '/projects');
-        yield dispatch({ type: 'SET_PROJECTS', payload: projectResponse });
+        yield dispatch({ type: 'SET_PROJECTS', payload: projectResponse.data });
+        // yield dispatch({type: 'FETCH_TAGS', payload: projectResponse.data})
     } catch (error) {
         console.log(`Error from fetch projects ${error}`);
     }
