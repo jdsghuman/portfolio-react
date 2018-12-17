@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from '../Button/Button';
 import './ProjectItem.css';
 
+// Button styling
 const btnProject = {
   marginBottom: '20px',
   margin: '10px',
