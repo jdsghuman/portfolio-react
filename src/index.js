@@ -13,11 +13,21 @@ import axios from 'axios';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
 
+function* addProject(action) {
+    try {
+        console.log('add project');
+        console.log('action add: ', action.payload);
+        yield call(axios.post, '/projects', action.payload);
+        yield dispatch({ type: 'FETCH_PROJECTS'});
+    } catch(error) {
+        console.log(error);
+    }
+}
+
 function* fetchProjects() {
     try {
         const projectResponse = yield call(axios.get, '/projects');
         yield dispatch({ type: 'SET_PROJECTS', payload: projectResponse.data });
-        // yield dispatch({type: 'FETCH_TAGS', payload: projectResponse.data})
     } catch (error) {
         console.log(`Error from fetch projects ${error}`);
     }
@@ -26,6 +36,7 @@ function* fetchProjects() {
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_PROJECTS', fetchProjects);
+    yield takeEvery('ADD_PROJECT', addProject);
 }
 
 // Create sagaMiddleware

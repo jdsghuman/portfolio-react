@@ -18,7 +18,7 @@ class Project extends Component {
     return (
       <div className="wrapper">
         <Title>PROJECTS</Title>
-        {/* Loop over projects */}
+        {/* Loop over projects returned from DB */}
         {this.props.project.map(p => {
           return <ProjectItem 
                     key={p.id} 
@@ -27,7 +27,8 @@ class Project extends Component {
                     github={p.github} 
                     website={p.website} 
                     url={p.thumbnail} 
-                    tag={p.tag} />
+                    tag={p.tag} 
+                    />
         })}
       </div>
     );

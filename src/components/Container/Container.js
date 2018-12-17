@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import Projects from '../Projects/Projects';
 import About from '../About/About';
+import Admin from '../Admin/Admin';
 
 class Container extends Component {
   render() {

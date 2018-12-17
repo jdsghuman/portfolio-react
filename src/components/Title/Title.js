@@ -7,7 +7,6 @@ const title = {
   textAlign: 'center',
   color: '#2cbadb',
   paddingBottom: '5px',
-  // fontWeight: '300',
   borderBottom: '3px solid rgb(3, 31, 37)'
 }
 

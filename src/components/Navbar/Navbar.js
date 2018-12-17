@@ -4,10 +4,12 @@ import Button from '../Button/Button';
 import './Navbar.css';
 
 class Navbar extends Component {
+  // State for mobile hamburger menu
   state = {
     open: false
   }
 
+  // Hamburger menu - WIP
   handleClick = () => {
     this.setState({
       open: !this.state.open
