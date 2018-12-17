@@ -1,4 +1,4 @@
-button {
+.btn {
   border: 1px solid #2cbadb;
   font-size: .8rem;
   color: #2cbadb;
@@ -12,6 +12,6 @@ button {
   background-color: transparent;
 }
 
-button:hover {
+.btn:hover {
   background-color: rgba(44, 186, 219, .1);
 }
