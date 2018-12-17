@@ -11,6 +11,10 @@ class Button extends Component {
     }
   }
 
+  delete = (id) => {
+    
+  }
+
   render() {
     return (
       <button onClick={() => this.onClick(this.props.url)} 

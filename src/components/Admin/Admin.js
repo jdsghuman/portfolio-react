@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Title from '../Title/Title';
 import Button from '../Button/Button';
 import { connect } from 'react-redux';
+import AdminTableDetail from '../AdminTableDetail/AdminTableDetail';
 
 const btnForm = {
   marginBottom: '100px',
@@ -26,6 +27,14 @@ class Admin extends Component {
       date_completed: '',
       tag_id: ''
     }
+  }
+
+  componentDidMount() {
+    this.getProjects();
+  }
+
+  getProjects = () => {
+    this.props.dispatch({ type: 'FETCH_PROJECTS' });
   }
 
   handleChange = event => {
@@ -54,6 +63,9 @@ class Admin extends Component {
   }
 
   render() {
+    let projectDetail = this.props.projects.map(project => {
+      return <AdminTableDetail key={project.id} id={project.id} name={project.name} />
+    })
     return (
       <div className="wrapper">
         <Title>Admin</Title>
@@ -76,10 +88,27 @@ class Admin extends Component {
           <textarea value={this.state.newProject.description} onChange={this.handleChange} name="description"></textarea>
           <Button style={btnForm}>Submit</Button>
         </form>
-        {JSON.stringify(this.state)}
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {projectDetail}
+          </tbody>
+        </table>
       </div>
     );
   }
 }
 
-export default connect()(Admin);
+const mapStateToProps = reduxStore => {
+  return {
+    projects: reduxStore.projects
+  }
+}
+
+export default connect(mapStateToProps)(Admin);
