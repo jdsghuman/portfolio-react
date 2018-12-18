@@ -25,7 +25,7 @@ class Admin extends Component {
       thumbnail: '',
       website: '',
       date_completed: '',
-      tag_id: ''
+      tag_id: '1'
     }
   }
 
@@ -35,6 +35,7 @@ class Admin extends Component {
 
   getProjects = () => {
     this.props.dispatch({ type: 'FETCH_PROJECTS' });
+    this.props.dispatch({ type: 'FETCH_TAGS' });
   }
 
   handleChange = event => {
@@ -75,19 +76,15 @@ class Admin extends Component {
           <input value={this.state.newProject.name} onChange={this.handleChange} name="name" type="text" placeholder="Name of project" />
           <input value={this.state.newProject.date_completed} onChange={this.handleChange} name="date_completed" type="date" />
           <select value={this.state.newProject.tag_id} onChange={this.handleChange} name="tag_id">
-            <option value="">Select a value</option>
-            <option value="1">React</option>
-            <option value="2">jQuery</option>
-            <option value="3">Node</option>
-            <option value="4">SQL</option>
-            <option value="5">Redux</option>
-            <option value="6">HTML</option>
+            {this.props.tags.map(tag => {
+              return <option key={tag.id} value={tag.id}>{tag.name}</option>
+            })}
           </select>
           <input value={this.state.newProject.github} onChange={this.handleChange} name="github" type="text" placeholder="GitHub URL" />
           <input value={this.state.newProject.thumbnail} onChange={this.handleChange} name="thumbnail" type="text" placeholder="Thumbnail" />
           <input value={this.state.newProject.website} onChange={this.handleChange} name="website" type="text" placeholder="Website URL (Optional)" />
           <textarea value={this.state.newProject.description} onChange={this.handleChange} name="description"></textarea>
-          <Button style={btnForm}>Submit</Button>
+          <Button style={btnForm}>Add Project</Button>
         </form>
 
         <table>
@@ -101,6 +98,7 @@ class Admin extends Component {
             {projectDetail}
           </tbody>
         </table>
+        {JSON.stringify(this.state)}
       </div>
     );
   }
@@ -108,7 +106,8 @@ class Admin extends Component {
 
 const mapStateToProps = reduxStore => {
   return {
-    projects: reduxStore.projects
+    projects: reduxStore.projects,
+    tags: reduxStore.tags
   }
 }
 

@@ -6,6 +6,8 @@
   width: 90%;
   margin: 0 auto;
   margin-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .project-item__title {
@@ -56,6 +58,11 @@
 }
 
 @media only screen and (max-width: 625px) {
+  .project-item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
   .project-item_button-display {
     margin-left: 10px;
   }
