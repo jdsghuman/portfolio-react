@@ -46,7 +46,7 @@ li:not(:last-child) a:hover {
   padding-bottom: 6px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 525px) {
   .menu--desktop {
     display: none;
   }

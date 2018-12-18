@@ -5,7 +5,6 @@ import App from './components/App/App.js';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { takeEvery, call, put as dispatch } from 'redux-saga/effects';
-// Provider allows us to use redux within our react app
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import axios from 'axios';
@@ -13,6 +12,7 @@ import axios from 'axios';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
 
+// Add new saga
 function* addProject(action) {
     try {
         yield call(axios.post, '/projects', action.payload);
@@ -24,6 +24,7 @@ function* addProject(action) {
     }
 }
 
+// Delete saga
 function* deleteProject(action) {
     try {
         yield call(axios.delete, `/projects/${action.payload}`);
@@ -34,10 +35,11 @@ function* deleteProject(action) {
     }
 }
 
+// Get projects saga
 function* fetchProjects() {
     try {
-        const projectResponse = yield call(axios.get, '/projects');
-        yield dispatch({ type: 'SET_PROJECTS', payload: projectResponse.data });
+        const projectsResponse = yield call(axios.get, '/projects');
+        yield dispatch({ type: 'SET_PROJECTS', payload: projectsResponse.data });
     } catch (error) {
         console.log(`Error from fetch projects ${error}`);
     }

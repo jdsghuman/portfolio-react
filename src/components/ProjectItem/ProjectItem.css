@@ -26,6 +26,7 @@
 .project-item_button-display {
   display: flex;
   flex-direction: column;
+  margin-left: 30px;
 }
 
 .project-item__button {
@@ -54,7 +55,13 @@
   padding-right: 10px;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 625px) {
+  .project-item_button-display {
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 590px) {
   .project-item__display {
     flex-direction: column;
   }
