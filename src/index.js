@@ -17,8 +17,8 @@ function* addProject(action) {
     try {
         yield call(axios.post, '/projects', action.payload);
         alert('Project added!');
-        yield dispatch({ type: 'FETCH_PROJECTS'});
-    } catch(error) {
+        yield dispatch({ type: 'FETCH_PROJECTS' });
+    } catch (error) {
         console.log(error);
         alert('Error adding project');
     }
@@ -29,8 +29,8 @@ function* deleteProject(action) {
     try {
         yield call(axios.delete, `/projects/${action.payload}`);
         alert('Project deleted');
-        yield dispatch({ type: 'FETCH_PROJECTS'});
-    } catch(error) {
+        yield dispatch({ type: 'FETCH_PROJECTS' });
+    } catch (error) {
         console.log(error);
     }
 }
@@ -45,11 +45,21 @@ function* fetchProjects() {
     }
 }
 
+function* fetchTags() {
+    try {
+        const tagsResponse = yield call(axios.get, '/tags');
+        yield dispatch({ type: 'SET_TAGS', payload: tagsResponse.data });
+    } catch (error) {
+        console.log(`Error from fetch tags ${error}`);
+    }
+}
+
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_PROJECTS', fetchProjects);
     yield takeEvery('ADD_PROJECT', addProject);
     yield takeEvery('DELETE_PROJECT', deleteProject);
+    yield takeEvery('FETCH_TAGS', fetchTags);
 }
 
 // Create sagaMiddleware
