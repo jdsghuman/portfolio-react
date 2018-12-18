@@ -68,3 +68,9 @@ p {
     transform: translateY(10%);
   }
 }
+
+@media only screen and (min-height: 1000px) {
+  .large-hero__text-content {
+    transform: translateY(20%);
+  }
+}
