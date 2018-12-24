@@ -37,7 +37,7 @@ npm run client
 ![desktop](public/images/home_desktop.png)
 
 ### Home - Mobile
-![mobile](public/images/home_mobile.png | width=350)
+<img src="public/images/home_mobile.png" width="350">
 
 View 2
 
