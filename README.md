@@ -41,18 +41,17 @@ npm run client
 
 View 2
 
-![mobile](public/images/home_mobile_2.png | width=350)
+<img src="public/images/home_mobile_2.png" width="350">
 
 ### Projects Page - Desktop
 ![projects](public/images/projetcs_desktop.png)
 
 ### Projects Page - Mobile
-![projects](public/images/projects_mobile.png | width=350) 
+<img src="public/images/projects_mobile.png" width="350">
 
 View 2
 
-![projects](public/images/projects_mobile_2.png | width=350)
-
+<img src="public/images/projects_mobile_2.png" width="350">
 
 
 
