@@ -44,7 +44,7 @@ View 2
 <img src="public/images/home_mobile_2.png" width="350">
 
 ### Projects Page - Desktop
-![projects](public/images/projetcs_desktop.png)
+![projects](public/images/projects_desktop.png)
 
 ### Projects Page - Mobile
 <img src="public/images/projects_mobile.png" width="350">
