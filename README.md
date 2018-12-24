@@ -37,15 +37,21 @@ npm run client
 ![desktop](public/images/home_desktop.png)
 
 ### Home - Mobile
-![mobile](public/images/home_mobile.png)
-![mobile](public/images/home_mobile_2.png)
+![mobile](public/images/home_mobile.png | width=350)
+
+View 2
+
+![mobile](public/images/home_mobile_2.png | width=350)
 
 ### Projects Page - Desktop
-![projects](public/images/projets_desktop.png)
+![projects](public/images/projetcs_desktop.png)
 
 ### Projects Page - Mobile
-![projects](public/images/projets_mobile.png)
-![projects](public/images/projets_mobile_2.png)
+![projects](public/images/projects_mobile.png | width=350) 
+
+View 2
+
+![projects](public/images/projects_mobile_2.png | width=350)
 
 
 
