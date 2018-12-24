@@ -12,11 +12,11 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <React.Fragment>
+          <>
             <Navbar />
             <Container />
             <Footer />
-          </React.Fragment>
+          </>
         </Router>
       </div>
     );
