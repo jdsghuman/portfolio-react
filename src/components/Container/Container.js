@@ -8,7 +8,7 @@ import ProjectList from '../ProjectList/ProjectList';
 import About from '../About/About';
 import Admin from '../Admin/Admin';
 
-function Container({ location }) {
+const Container = ({ location }) => {
   return (
     <Wrapper>
       <TransitionGroup className="transition-group">
@@ -33,7 +33,7 @@ function Container({ location }) {
 
 const Wrapper = styled.div`
     .fade-enter {
-      opacity: 0.01;
+      opacity: 0;
     }
 
     .fade-enter.fade-enter-active {
@@ -46,11 +46,9 @@ const Wrapper = styled.div`
     }
 
     .fade-exit.fade-exit-active {
-      opacity: 0.01;
+      opacity: 0;
       transition: opacity 300ms ease-in;
     }
-
-    ////
 
     div.transition-group {
       position: relative;
@@ -60,9 +58,7 @@ const Wrapper = styled.div`
       width: 100%;
       top: 0;
       left: 0;
-    }
-
-    
+    }   
 `;
 
 export default withRouter(Container);
