@@ -18,7 +18,7 @@ class Resume extends Component {
       <Container>
         <div style={styleDiv}>
           <Title>RESUME</Title>
-          <a href="/resume.pdf" target="_blank"><Button>Download</Button></a>
+          <Button href="/resume.pdf" target="_blank">Download</Button>
           <Document
             file="/resume.pdf"
             onLoadSuccess={this.onDocumentLoadSuccess}
@@ -41,11 +41,12 @@ class Resume extends Component {
 
 const styleDiv = {
   width: '100%',
-  overflow: 'scroll'
+  overflow: 'scroll',
+  textAlign: 'center'
 }
 
-const Button = styled.button`
-  display: block;
+const Button = styled.a`
+  display: inline-block;
   margin: 0 auto;
   border: 1px solid #2cbadb;
   font-size: .8rem;
