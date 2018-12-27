@@ -9,11 +9,12 @@ class AdminItem extends Component {
   }
 
   render() {
+    let adminData = this.props.adminData;
     return (
       <tr>
-        <td>{this.props.adminData.name}</td>
+        <td>{adminData.name}</td>
         <td><button onClick={e => window.confirm('Are you sure you want to delete this project?') &&
-          this.deleteProject(this.props.adminData.id)}>Delete</button></td>
+          this.deleteProject(adminData.id)}>Delete</button></td>
       </tr>
     );
   }
