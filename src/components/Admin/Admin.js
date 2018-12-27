@@ -3,6 +3,7 @@ import Title from '../Title/Title';
 import Button from '../Button/Button';
 import { connect } from 'react-redux';
 import AdminItem from '../AdminItem/AdminItem';
+import TextField from '@material-ui/core/TextField';
 
 const btnForm = {
   marginBottom: '100px',
@@ -72,9 +73,28 @@ class Admin extends Component {
       <div className="wrapper">
         <Title>Admin</Title>
         <h2 style={titleStyle}>Add New Project</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input value={this.state.newProject.name} onChange={this.handleChange} name="name" type="text" placeholder="Name of project" />
-          <input value={this.state.newProject.date_completed} onChange={this.handleChange} name="date_completed" type="date" />
+        <form onSubmit={this.handleSubmit} autoComplete="off">
+          <TextField
+            id="outlined-name"
+            label="Name of project"
+            name="name"
+            value={this.state.newProject.name}
+            onChange={this.handleChange}
+            margin="normal"
+            variant="outlined"
+          />
+
+          <TextField
+            id="date"
+            label="Date Completed"
+            type="date"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            value={this.state.newProject.date_completed}
+            onChange={this.handleChange}
+            name="date_completed"
+          />
           <select value={this.state.newProject.tag_id} onChange={this.handleChange} name="tag_id">
             {this.props.tags.map(tag => {
               return <option key={tag.id} value={tag.id}>{tag.name}</option>
