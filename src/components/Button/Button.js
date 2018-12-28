@@ -4,7 +4,7 @@ import './Button.css';
 class Button extends Component {
 
   // Open URL in new tab
-  onClick = (url) => {
+  click = (url) => {
     if (url) {
       console.log('clicked');
       window.open(url, "_blank");
@@ -18,7 +18,7 @@ class Button extends Component {
   render() {
     return (
       <button 
-        onClick={() => this.onClick(this.props.url)} 
+        onClick={() => this.click(this.props.url)} 
         className="btn" 
         style={this.props.style}>{this.props.children}</button>
     );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Title from '../Title/Title';
 import { Document, Page } from 'react-pdf';
 import styled from 'styled-components';
+import Button from '../Button/Button';
 
 import './Resume.css';
 
@@ -18,10 +19,11 @@ class Resume extends Component {
       <Container>
         <div style={styleDiv}>
           <Title>RESUME</Title>
-          <Button href="/resume.pdf" target="_blank">Download</Button>
+          <Button style={btnStyle}><a style={{color: '#2cbadb'}} href="/resume.pdf">Download</a></Button>
+          {/* <Button href="/resume.pdf" target="_blank">Download</Button> */}
           <Document
             file="/resume.pdf"
-            onLoadSuccess={this.onDocumentLoadSuccess}
+            // onLoadSuccess={this.onDocumentLoadSuccess}
             style={styleDiv}
           >
             <Page
@@ -45,21 +47,12 @@ const styleDiv = {
   textAlign: 'center'
 }
 
-const Button = styled.a`
-  display: inline-block;
-  margin: 0 auto;
-  border: 1px solid #2cbadb;
-  font-size: .8rem;
-  color: #2cbadb;
-  padding: 8px 12px;
-  cursor: pointer;
-  transform: translateY(-24%);
-  font-family: 'PT Mono', monospace;
-  transition: .2s all linear;
-  letter-spacing: 1.5px;
-  border-radius: 2px;
-  background-color: transparent;
-`;
+const btnStyle = {
+  border: '2px solid #2cbadb',
+  padding: '9px 14px',
+  fontSize: '1rem',
+  color: '#2cbadb'
+}
 
 const Container = styled.div`
   padding-left: 5%;
