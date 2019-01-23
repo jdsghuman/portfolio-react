@@ -58,6 +58,9 @@ p {
   .large-hero__text-content {
     transform: translateY(10%);
   }
+  .primary__intro {
+    font-size: 1.4rem;
+  }
   .primary__name {
     line-height: .9;
   }
