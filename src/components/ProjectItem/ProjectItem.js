@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import Button from '../Button/Button';
 import './ProjectItem.css';
 
-// Button styling
-const btnProject = {
-  marginBottom: '20px',
-  margin: '10px',
-  border: '2px solid #2cbadb',
-  padding: '9px 14px',
-  fontSize: '1rem'
-}
-
 class ProjectItem extends Component {
 
   render() {
@@ -25,10 +16,10 @@ class ProjectItem extends Component {
           <div className="project-item_button-display">
             {/* External conditional rendering for external project links */}
             {project.github &&
-              <Button url={project.github} style={btnProject}>GitHub</Button>
+              <Button url={project.github} classes="btn btn__project">GitHub</Button>
             }
             {project.website &&
-              <Button url={project.website} style={btnProject}>Website</Button>
+              <Button url={project.website} classes="btn btn__project">Website</Button>
             }
           </div>
         </div>

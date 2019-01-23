@@ -18,7 +18,7 @@ class Resume extends Component {
       <Container>
         <div style={styleDiv}>
           <Title>RESUME</Title>
-          <Button style={btnStyle}><a style={{color: '#2cbadb'}} href="/resume.pdf">Download</a></Button>
+          <a style={{color: '#2cbadb'}} href="/resume.pdf"><Button classes="btn btn__project btn__resume">Download</Button></a>
           <Document
             file="/resume.pdf"
             // onLoadSuccess={this.onDocumentLoadSuccess}
@@ -43,13 +43,6 @@ const styleDiv = {
   width: '100%',
   overflow: 'scroll',
   textAlign: 'center'
-}
-
-const btnStyle = {
-  border: '2px solid #2cbadb',
-  padding: '9px 14px',
-  fontSize: '1rem',
-  color: '#2cbadb'
 }
 
 const Container = styled.div`
