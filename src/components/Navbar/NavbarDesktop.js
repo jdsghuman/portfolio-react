@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 
 const navbarDesktop = props => (
   <>
-    <ul>
+    <ul className="nav__desktop-links">
       <li>
         <Link to="/">Home</Link>
       </li>
