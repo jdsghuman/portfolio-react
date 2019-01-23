@@ -1,47 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../Button/Button';
+import NavbarDesktop from './NavbarDesktop';
+import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import './Navbar.css';
 
 class Navbar extends Component {
-  // State for mobile hamburger menu
-  state = {
-    open: false
-  }
 
-  // Hamburger menu - WIP
-  handleClick = () => {
-    this.setState({
-      open: !this.state.open
-    });
-  }
   render() {
     return (
       <nav>
-        <div className="nav__primary">
-        <div>
-          <Link to="/">
-            <img src="/images/JD-Develop-white.png" alt="Logo" />
-          </Link>
-        </div>
-        <div className="menu--desktop">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/projects">Projects</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/resume">
-                <Button classes="btn">Resume</Button>
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <div className="nav nav__primary">
+          <div className="nav-left">
+            <Link to="/">
+              <img src="/images/JD-Develop-white.png" alt="Logo" />
+            </Link>
+          </div>
+          <div className="nav-right">
+            <div className="menu--mobile">
+            {/* Mobile/Tablet menu icon */}
+              <DrawerToggleButton click={this.props.drawerToggleClickHandler} />
+            </div>
+            <div className="menu--desktop">
+              <NavbarDesktop />
+            </div>
+          </div>
         </div>
       </nav>
     );

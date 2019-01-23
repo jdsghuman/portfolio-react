@@ -19,7 +19,7 @@ class Project extends Component {
     return (
       <div className="wrapper">
         <Title>PROJECTS</Title>
-        {/* Loop over projects returned from DB */}
+        {/* Loop over projects */}
         {projects.length > 0 ? (
           projects.map(project => {
           return <ProjectItem 
