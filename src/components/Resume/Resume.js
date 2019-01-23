@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Title from '../Title/Title';
-import { Document, Page } from 'react-pdf';
+import { Document, Page, pdfjs } from 'react-pdf';
 import styled from 'styled-components';
 import Button from '../Button/Button';
 
 import './Resume.css';
 
-import { pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 class Resume extends Component {
@@ -20,7 +19,6 @@ class Resume extends Component {
         <div style={styleDiv}>
           <Title>RESUME</Title>
           <Button style={btnStyle}><a style={{color: '#2cbadb'}} href="/resume.pdf">Download</a></Button>
-          {/* <Button href="/resume.pdf" target="_blank">Download</Button> */}
           <Document
             file="/resume.pdf"
             // onLoadSuccess={this.onDocumentLoadSuccess}
