@@ -61,6 +61,12 @@ p {
   .primary__name {
     line-height: .9;
   }
+  .primary__button--mobile {
+    border: 2px solid red;
+    color: red;
+    font-size: 1.2rem;
+  }
+
 }
 
 @media all and (orientation:landscape) {

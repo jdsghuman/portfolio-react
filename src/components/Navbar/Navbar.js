@@ -37,7 +37,7 @@ class Navbar extends Component {
             </li>
             <li>
               <Link to="/resume">
-                <Button>Resume</Button>
+                <Button classes="btn">Resume</Button>
               </Link>
             </li>
           </ul>

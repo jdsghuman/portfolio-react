@@ -19,7 +19,7 @@ class Button extends Component {
     return (
       <button 
         onClick={() => this.click(this.props.url)} 
-        className="btn" 
+        className={this.props.classes} 
         style={this.props.style}>{this.props.children}</button>
     );
   }
