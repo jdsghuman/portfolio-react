@@ -28,7 +28,7 @@ View 2
 <img src="public/images/home_mobile_2.png" width="350" />
 
 ### Projects Page - Desktop
-<img src="public/images/projects_desktop.png" width="350" />
+<img src="public/images/projects_desktop.png" width="700" />
 
 ### Projects Page - Mobile
 <img src="public/images/projects_mobile.png" width="350" />
