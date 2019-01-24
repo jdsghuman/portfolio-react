@@ -18,7 +18,7 @@ npm run client
 ## Screenshots
 
 ### Home - Desktop
-<img src="public/images/home_desktop.png" />
+<img src="public/images/home_desktop.png" width="700" />
 
 ### Home - Mobile
 <img src="public/images/home_mobile.png" width="350" />
@@ -28,7 +28,7 @@ View 2
 <img src="public/images/home_mobile_2.png" width="350" />
 
 ### Projects Page - Desktop
-![projects](public/images/projects_desktop.png)
+<img src="public/images/home_mobile_2.png" width="700" />
 
 ### Projects Page - Mobile
 <img src="public/images/projects_mobile.png" width="350" />
