@@ -5,6 +5,7 @@ import Container from '../Container/Container';
 import { BrowserRouter as Router } from 'react-router-dom';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Backdrop from '../Backdrop/Backdrop';
+import ReactGA from 'react-ga';
 
 import './App.css';
 
@@ -12,6 +13,11 @@ class App extends Component {
   state = {
     sidedrawerOpen: false
   };
+
+  componentDidMount() {
+    ReactGA.initialize('UA-78377127-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
 
   backdropClickHandler = () => {
     this.setState({ sidedrawerOpen: false });

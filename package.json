@@ -9,6 +9,7 @@
     "pg": "^7.7.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-ga": "^2.5.6",
     "react-pdf": "^4.0.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
