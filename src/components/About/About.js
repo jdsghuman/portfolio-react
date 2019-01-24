@@ -26,9 +26,9 @@ class About extends Component {
             </div>
           </div>
           <div className="about__links">
-            <a href="https://www.linkedin.com/in/jdghuman/" target="_blank"><img className="img__about" src="images/linkedin-brands.svg" /></a>
-            <a className="link__email" href="mailto:jdsghuman@gmail.com"><img className="img__about" src="images/envelope-regular.svg" /></a>
-            <a href="https://github.com/jdsghuman" target="_blank"><img className="img__about" src="images/github-square-brands.svg" /></a>
+            <a href="https://www.linkedin.com/in/jdghuman/" target="_blank" rel="noopener noreferrer"><img className="img__about" alt="linkedin icon" src="images/linkedin-brands.svg" /></a>
+            <a className="link__email" href="mailto:jdsghuman@gmail.com"><img className="img__about" alt="email icon" src="images/envelope-regular.svg" /></a>
+            <a href="https://github.com/jdsghuman" target="_blank" rel="noopener noreferrer"><img className="img__about" alt="github icon" src="images/github-square-brands.svg" /></a>
           </div>
         </div>
       </>
