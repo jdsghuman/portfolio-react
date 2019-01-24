@@ -18,7 +18,7 @@ class Resume extends Component {
       <Container>
         <div style={styleDiv}>
           <Title>RESUME</Title>
-          <a style={{color: '#2cbadb'}} href="/resume.pdf"><Button classes="btn btn__project btn__resume">Download</Button></a>
+          <a style={{color: '#2cbadb'}} href="/resume.pdf" target="_blank" rel="noopener noreferrer"><Button classes="btn btn__project btn__resume">Download</Button></a>
           <Document
             file="/resume.pdf"
             // onLoadSuccess={this.onDocumentLoadSuccess}
