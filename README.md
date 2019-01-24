@@ -1,11 +1,15 @@
 # Portfolio - React 
+Portfolio built in React, optimized for Desktop and Mobile.
+
+Production URL:
+https://jdghuman.com/
 
 ## Local Setup
 
 ```
 npm install 
 ```
-Not that the dependencies are installed, start the react client app.
+Now that the dependencies are installed, start the react client app.
 
 ```
 npm run client
