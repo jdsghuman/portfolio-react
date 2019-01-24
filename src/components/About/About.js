@@ -16,7 +16,7 @@ class About extends Component {
               beautiful, responsive, user intuitive designs.
               </p>
             </div>
-            <div style={{ marginTop: '20px' }}>
+            <div style={{ marginTop: '40px' }}>
               <p>
                 When I am not building websites or automating all the things,
                 I can be found hanging out with my family, walking my yappy dog,

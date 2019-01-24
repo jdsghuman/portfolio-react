@@ -5,40 +5,29 @@ import Title from '../Title/Title';
 
 class Project extends Component {
 
-  componentDidMount() { 
-    this.getProjects();
-  }
-
-  getProjects = () => {
-    // Get projects from DB
-    this.props.dispatch({type: 'FETCH_PROJECTS'});
-  }
-
   render() {
     let projects = this.props.projects;
     return (
       <div className="wrapper">
         <Title>PROJECTS</Title>
         {/* Loop over projects */}
-        {projects.length > 0 ? (
+        {projects.length > 0 && (
           projects.map(project => {
-          return <ProjectItem 
-                    key={project.id} 
-                    projectData={project}
-                    />
-        })
-        ) : (
-          <p style={{textAlign: 'center'}}>No projects available</p>
+            return <ProjectItem
+              key={project.id}
+              projectData={project}
+            />
+          })
         )
-      }
+        }
       </div>
     );
   }
 }
 
-const mapStateToProps = reduxStore => {
+const mapStateToProps = store => {
   return {
-    projects: reduxStore.projects
+    projects: store.projects
   }
 }
 
