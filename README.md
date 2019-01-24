@@ -1,4 +1,4 @@
-# Portfolio - React with Redux Saga
+# Portfolio - React 
 
 ## Local Setup
 
