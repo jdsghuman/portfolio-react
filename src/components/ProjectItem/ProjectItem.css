@@ -11,23 +11,27 @@
 }
 
 .project-item__title {
-  display: inline-block;
+  display: block;
   font-weight: 300;
   color: #2cbadb;
   padding: 6px;
   border-bottom: 1px solid #2cbadb;
+  margin: 0 auto;
+  margin-bottom: 35px;
+  text-align: center;
+  width: 40%;
 }
 
 .project-item__display {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .project-item_button-display {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-left: 30px;
 }
 
@@ -38,9 +42,9 @@
 
 .project-item__img {
   display: block;
-  margin-right: 20px;
+  margin-bottom: 30px;
   text-align: center;
-  width: 350px;
+  width: 400px;
   height: auto;
   border: 1px solid black;
   border-radius: 2px;
@@ -73,6 +77,11 @@
     flex-direction: column;
   }
 
+  .project-item__title {
+    margin-bottom: 25px;
+    width: 60%;
+  }
+
   .project-item_button-display {
     margin-top: 20px;
     flex-direction: row;
@@ -81,6 +90,7 @@
 
   .project-item__img {
     margin-right: 0;
+    margin-bottom: 10px;
     width: 90%;
   }
 

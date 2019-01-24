@@ -28,7 +28,7 @@ class Project extends Component {
                     />
         })
         ) : (
-          <p>No projects available</p>
+          <p style={{textAlign: 'center'}}>No projects available</p>
         )
       }
       </div>
