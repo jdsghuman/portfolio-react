@@ -9,9 +9,42 @@
   transition: .2s all linear;
   letter-spacing: 1.5px;
   border-radius: 2px;
+  font-size: 1rem;
   background-color: transparent;
 }
 
 .btn:hover {
   background-color: rgba(44, 186, 219, .1);
+}
+
+.btn__project {
+  margin-bottom: 20px;
+  margin: 10px;
+  border: 2px solid #2cbadb;
+  padding: 9px 14px;
+  font-size: 1rem;
+}
+
+.btn__home {
+  margin-bottom: 100px;
+  border: 2px solid #2cbadb;
+  padding: 9px 14px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.btn__resume {
+  color: #2cbadb;
+}
+
+.btn__resume--mobile {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .btn__home {
+    border: 2px solid #2cbadb;
+    padding: 12px 17px;
+  }
 }

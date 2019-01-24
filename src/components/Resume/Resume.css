@@ -1,0 +1,10 @@
+.react-pdf__Page__canvas {
+  width: 100% !important;
+  max-width: 800px;
+  height: auto !important;
+  margin: 0 auto;
+}
+
+.pageTwo {
+  margin-top: -80px;
+}
