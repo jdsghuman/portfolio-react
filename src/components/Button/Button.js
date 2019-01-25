@@ -6,7 +6,6 @@ class Button extends Component {
   // Open URL in new tab
   click = (url) => {
     if (url) {
-      console.log('clicked');
       window.open(url, "_blank");
     }
   }

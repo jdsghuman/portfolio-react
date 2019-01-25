@@ -11,7 +11,7 @@ class About extends Component {
           <div className="about__description">
             <div>
               <p>
-                I am a Full Stack Engineer with a background in software automation,
+                I am a Full Stack Software Engineer with a background in software automation,
               located in Minneapolis, MN. I enjoy turning concepts and ideas into
               beautiful, responsive, user intuitive designs.
               </p>
