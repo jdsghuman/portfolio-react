@@ -27,6 +27,15 @@ const projects = [
     website: '',
     github: 'https://github.com/jdsghuman/portfolio-react',
     tags: ['React']
+  },
+  {
+    id: '4',
+    name: 'Planner',
+    description: 'A Planner app that allows users to save and retrieve tasks',
+    thumbnail: 'images/planner.png',
+    website: 'https://thawing-ridge-92038.herokuapp.com/',
+    github: 'https://github.com/jdsghuman/planner',
+    tags: ['jQuery', 'Node', 'PostgreSQL']
   }
 ]
 const projectsReducer = (state = projects, action) => {
