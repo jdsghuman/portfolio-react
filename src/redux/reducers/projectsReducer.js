@@ -2,7 +2,7 @@
 
 const projects = [
   {
-    id: '1',
+    id: 1,
     name: 'Bobbieleelicious',
     description: 'Full stack recipe application with responsive design for Mobile and Web that includes a Node backend.',
     thumbnail: 'images/login.png',
@@ -11,7 +11,7 @@ const projects = [
     tags: ['React', 'Redux-Saga', 'Node', 'Express', 'PostgreSQL']
   },
   {
-    id: '2',
+    id: 2,
     name: 'Feedback',
     description: 'Feedback form is an application that allows user to provide feedback with ratings and comments. Admin users are able to view and delete feedback from the admin page.',
     thumbnail: 'images/feedback.png',
@@ -20,22 +20,31 @@ const projects = [
     tags: ['React', 'Node', 'Express', 'PostgresSQL']
   },
   {
-    id: '3',
+    id: 3,
     name: 'Portfolio',
     description: 'Responsive portfolio made with React, optimized for Mobile and Web',
     thumbnail: 'images/jdghuman.png',
     website: '',
     github: 'https://github.com/jdsghuman/portfolio-react',
-    tags: ['React']
+    tags: ['React', 'Redux']
   },
   {
-    id: '4',
+    id: 4,
     name: 'Planner',
     description: 'A Planner app that allows users to save and retrieve tasks',
     thumbnail: 'images/planner.png',
-    website: 'https://thawing-ridge-92038.herokuapp.com/',
+    website: '',
     github: 'https://github.com/jdsghuman/planner',
     tags: ['jQuery', 'Node', 'PostgreSQL']
+  },
+  {
+    id: 5,
+    name: 'R&N Consulting',
+    description: 'Mobile responsive site made for R&N Consulting',
+    thumbnail: 'images/rnconsulting.png',
+    website: 'http://r-nconsulting.com/',
+    github: '',
+    tags: ['HTML5', 'CSS', 'JavaScript']
   }
 ]
 const projectsReducer = (state = projects, action) => {
