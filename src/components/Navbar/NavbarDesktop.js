@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 
 const navbarDesktop = props => (
   <>
-    <ul>
+    <ul className="nav__desktop-links">
       <li>
         <Link to="/">Home</Link>
       </li>
@@ -15,9 +15,12 @@ const navbarDesktop = props => (
         <Link to="/about">About</Link>
       </li>
       <li>
-        <Link to="/resume">
+        <a style={{ color: '#2cbadb' }}
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer">
           <Button classes="btn">Resume</Button>
-        </Link>
+        </a>
       </li>
     </ul>
   </>

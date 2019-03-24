@@ -1,0 +1,78 @@
+.about__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgb(3, 31, 37);
+  padding: 20px;
+  border-radius: 4px;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  padding: 40px;
+  color: #2cbadb;
+  font-family: 'PT Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 1.2px;
+}
+
+.about__description {
+  max-width: 350px;
+}
+
+.img__about {
+  background-color: #2cbadb;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50px;
+  transition: 0.3s ease-out;
+}
+
+.img__about:hover,
+.img__about:active {
+  background-color: #ffffff;
+}
+
+.about__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.terminal {
+  display: inline;
+  overflow: hidden; 
+  border-right: 2px solid #2cbadb; 
+  padding-right: 6px;
+  animation: blink .75s step-end infinite;
+}
+
+/* The typewriter cursor effect */
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #2cbadb; }
+}
+
+@media only screen and (max-width: 800px) {
+  .about__container {
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+  }
+
+  .about__description {
+    margin: 0 auto;
+  }
+
+  .about__links {
+    flex-direction: row;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .link__email {
+    margin-top: 4px;
+  }
+}

@@ -22,9 +22,12 @@ const sideDrawer = props => {
             <Link className="nav-link__mobile" to="/about">About</Link>
           </li>
           <li className="side-drawer__border--none">
-            <Link to="/resume">
+            <a style={{ color: '#2cbadb' }}
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
               <Button classes="btn btn__resume--mobile">Resume</Button>
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

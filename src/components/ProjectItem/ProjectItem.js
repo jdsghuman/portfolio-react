@@ -25,10 +25,24 @@ class ProjectItem extends Component {
         </div>
         {/* Project description */}
         <p className="project-item__description">{project.description}</p>
-        <p className="tag">Built with {project.tag}</p>
+        <div style={{textAlign: 'center'}}>
+          <p className="tag">Built with: </p> {project.tags.map(tag => {
+            return <p key={tag} style={tagStyles}>{tag}</p>
+          })}
+        </div>
       </div>
     );
   }
+}
+
+const tagStyles = {
+  display: 'inline-block',
+  margin: '5px',
+  padding: '5px',
+  background: 'rgba(44,186,219, 0.2)',
+  borderRadius: '5px',
+  color: '#2cbadb',
+  fontSize: '.8rem'
 }
 
 export default ProjectItem;

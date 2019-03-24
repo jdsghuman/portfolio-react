@@ -6,8 +6,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Home from '../Home/Home';
 import ProjectList from '../ProjectList/ProjectList';
 import About from '../About/About';
-import Admin from '../Admin/Admin';
-import Resume from '../Resume/Resume';
+import Title from '../Title/Title';
 
 const Container = ({ location }) => {
   return (
@@ -23,8 +22,7 @@ const Container = ({ location }) => {
             <Route exact path="/" component={Home} />
             <Route path="/projects" component={ProjectList} />
             <Route path="/about" component={About} />
-            <Route path="/admin" component={Admin} />
-            <Route path="/resume" component={Resume} />
+            <Route render={() => <Title>404</Title>} />
           </Switch>
         </section>
         </CSSTransition>
