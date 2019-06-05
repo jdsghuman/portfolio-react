@@ -11,9 +11,9 @@ class Home extends Component {
       <div className="wrapper">
         <div className="large-hero">
           <div className="large-hero__text-content">
-            <span class="dot dot--red"></span>
-            <span class="dot dot--yellow"></span>
-            <span class="dot dot--green"></span>
+            <span className="dot dot--red"></span>
+            <span className="dot dot--yellow"></span>
+            <span className="dot dot--green"></span>
             <p className="primary__intro">&#47;&#47; Hi, my name is</p>
             <p className="primary__name">JD Ghuman</p>
             <p className="primary__description">I build things with software.</p>

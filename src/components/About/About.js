@@ -8,9 +8,9 @@ class About extends Component {
       <>
         <Title>ABOUT</Title>
         <div className="about__container">
-          <span class="dot__about dot--red"></span>
-          <span class="dot__about dot--yellow"></span>
-          <span class="dot__about dot--green"></span>
+          <span className="dot__about dot--red"></span>
+          <span className="dot__about dot--yellow"></span>
+          <span className="dot__about dot--green"></span>
           <div className="about__description">
 
             <div className="about__links">
