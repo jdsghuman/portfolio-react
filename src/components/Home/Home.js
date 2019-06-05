@@ -11,6 +11,9 @@ class Home extends Component {
       <div className="wrapper">
         <div className="large-hero">
           <div className="large-hero__text-content">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
             <p className="primary__intro">&#47;&#47; Hi, my name is</p>
             <p className="primary__name">JD Ghuman</p>
             <p className="primary__description">I build things with software.</p>
@@ -18,6 +21,7 @@ class Home extends Component {
             <Link to="/projects">
               <Button classes="btn btn__home">Projects</Button>
             </Link>
+            <p className="terminal__home">>></p>
           </div>
         </div>
       </div>

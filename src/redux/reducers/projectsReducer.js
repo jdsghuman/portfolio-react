@@ -27,24 +27,6 @@ const projects = [
     website: '',
     github: 'https://github.com/jdsghuman/portfolio-react',
     tags: ['React', 'Redux']
-  },
-  {
-    id: 4,
-    name: 'Planner',
-    description: 'A Planner app that allows users to save and retrieve tasks',
-    thumbnail: 'images/planner.png',
-    website: '',
-    github: 'https://github.com/jdsghuman/planner',
-    tags: ['jQuery', 'Node', 'PostgreSQL']
-  },
-  {
-    id: 5,
-    name: 'R&N Consulting',
-    description: 'Mobile responsive site made for R&N Consulting',
-    thumbnail: 'images/rnconsulting.png',
-    website: 'http://r-nconsulting.com/',
-    github: '',
-    tags: ['HTML5', 'CSS', 'JavaScript']
   }
 ]
 const projectsReducer = (state = projects, action) => {

@@ -8,7 +8,16 @@ class About extends Component {
       <>
         <Title>ABOUT</Title>
         <div className="about__container">
+          <span class="dot__about dot--red"></span>
+          <span class="dot__about dot--yellow"></span>
+          <span class="dot__about dot--green"></span>
           <div className="about__description">
+
+            <div className="about__links">
+              <a href="https://www.linkedin.com/in/jdghuman/" target="_blank" rel="noopener noreferrer"><img className="img__about" alt="linkedin icon" src="images/linkedin-brands.svg" /></a>
+              <a className="link__email" href="mailto:jdsghuman@gmail.com"><img className="img__about" alt="email icon" src="images/envelope-regular.svg" /></a>
+              <a href="https://github.com/jdsghuman" target="_blank" rel="noopener noreferrer"><img className="img__about" alt="github icon" src="images/github-square-brands.svg" /></a>
+            </div>
             <div>
               <p>
                 I am a Full Stack Software Engineer with a background in software automation,
@@ -24,11 +33,6 @@ class About extends Component {
               </p>
               <p className="terminal">>></p>
             </div>
-          </div>
-          <div className="about__links">
-            <a href="https://www.linkedin.com/in/jdghuman/" target="_blank" rel="noopener noreferrer"><img className="img__about" alt="linkedin icon" src="images/linkedin-brands.svg" /></a>
-            <a className="link__email" href="mailto:jdsghuman@gmail.com"><img className="img__about" alt="email icon" src="images/envelope-regular.svg" /></a>
-            <a href="https://github.com/jdsghuman" target="_blank" rel="noopener noreferrer"><img className="img__about" alt="github icon" src="images/github-square-brands.svg" /></a>
           </div>
         </div>
       </>
