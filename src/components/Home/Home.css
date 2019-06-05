@@ -1,5 +1,40 @@
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:700');
 
+.dot {
+  height: 12px;
+  width: 12px;
+  margin-right: 5px;
+  border-radius: 50%;
+  display: none;
+  position: absolute;
+  top: -22px;
+}
+
+.dot__about {
+  height: 12px;
+  width: 12px;
+  margin-right: 5px;
+  border-radius: 50%;
+  display: inline;
+  position: absolute;
+  top: -22px;
+}
+
+.dot--red {
+  background-color: #ff5f57;
+  left: 15px;
+}
+
+.dot--yellow {
+  background-color: #ffbc2E;
+  left: 37px;
+}
+
+.dot--green {
+  background-color: #28ca41;
+  left: 59px;
+}
+
 .large-hero {
   position: relative;
 }
@@ -7,7 +42,7 @@
 .large-hero__text-content {
     transform: translateY(10%);
     left: 0;
-    width: 100%;
+    max-width: 98%;
 }
 
 p {
@@ -99,7 +134,6 @@ p {
     color: red;
     font-size: 1.2rem;
   }
-
 }
 
 @media all and (orientation:landscape) {
@@ -108,8 +142,26 @@ p {
   }
 }
 
-@media only screen and (min-height: 1000px) {
+@media only screen and (min-height: 640px) and (min-width: 580px){
   .large-hero__text-content {
-    transform: translateY(20%);
+    background-color: rgba(3, 31, 37, 0.9);
+    padding: 5px 20px;
+    border-radius: 5px;
+    border-top: 30px solid #dddddd;
+    margin-bottom: 80px;
+  }
+
+  .primary__detail {
+    color: #ffffff;
+  }
+
+  .dot {
+    display: inline;
+  }
+}
+
+@media only screen and (min-height: 700px) {
+  .large-hero__text-content {
+    transform: translateY(10%);
   }
 }

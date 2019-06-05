@@ -1,12 +1,11 @@
 .about__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  position: relative;
   background-color: rgb(3, 31, 37);
   padding: 20px;
-  border-radius: 4px;
-  width: 70%;
+  width: 60%;
+  max-width: 800px;
   margin: 0 auto;
+  margin-top: 40px;
   margin-bottom: 100px;
   padding: 40px;
   color: #2cbadb;
@@ -15,10 +14,12 @@
   font-weight: 300;
   line-height: 1.4;
   letter-spacing: 1.2px;
+  border-radius: 5px;
+  border-top: 30px solid #dddddd;
 }
 
 .about__description {
-  max-width: 350px;
+  margin: 0 auto;
 }
 
 .img__about {
@@ -28,6 +29,7 @@
   cursor: pointer;
   width: 50px;
   transition: 0.3s ease-out;
+  margin: 20px;
 }
 
 .img__about:hover,
@@ -36,9 +38,8 @@
 }
 
 .about__links {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .terminal {
@@ -49,6 +50,23 @@
   animation: blink .75s step-end infinite;
 }
 
+.terminal__home {
+  display: none;
+  overflow: hidden; 
+  border-right: 2px solid #2cbadb; 
+  color: #2cbadb;
+  padding-left: 15px;
+  padding-right: 6px;
+  animation: blink .75s step-end infinite;
+  width: 25px;
+}
+
+@media only screen and (min-height: 800px) and (min-width: 580px){
+  .terminal__home {
+    display: block;
+  }
+}
+
 /* The typewriter cursor effect */
 @keyframes blink {
   from, to { border-color: transparent }
@@ -57,18 +75,13 @@
 
 @media only screen and (max-width: 800px) {
   .about__container {
-    flex-direction: column;
-    width: 80%;
+    /* flex-direction: column; */
+    width:85%;
     padding: 20px;
-  }
-
-  .about__description {
-    margin: 0 auto;
   }
 
   .about__links {
     flex-direction: row;
-    margin-top: 30px;
     margin-bottom: 30px;
   }
 
