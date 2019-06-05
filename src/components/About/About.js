@@ -21,8 +21,8 @@ class About extends Component {
             <div>
               <p>
                 I am a Full Stack Software Engineer with a background in software automation,
-              located in Minneapolis, MN. I enjoy turning concepts and ideas into
-              beautiful, responsive, user intuitive designs.
+              located in Minneapolis, MN. I enjoy turning concepts and designs into
+              front end UI and solving problems with code.
               </p>
             </div>
             <div style={{ marginTop: '40px' }}>
