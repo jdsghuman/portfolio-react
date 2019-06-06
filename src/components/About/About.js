@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Title from '../Title/Title';
+import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
 import './About.css';
 
 class About extends Component {
@@ -8,9 +9,9 @@ class About extends Component {
       <>
         <Title>ABOUT</Title>
         <div className="about__container">
-          <span class="dot__about dot--red"></span>
-          <span class="dot__about dot--yellow"></span>
-          <span class="dot__about dot--green"></span>
+          <InteractiveButtons class="dot__about dot--red" />
+          <InteractiveButtons class="dot__about dot--yellow" />
+          <InteractiveButtons class="dot__about dot--green" />
           <div className="about__description">
 
             <div className="about__links">
@@ -21,13 +22,13 @@ class About extends Component {
             <div>
               <p>
                 I am a Full Stack Software Engineer with a background in software automation,
-              located in Minneapolis, MN. I enjoy turning concepts and ideas into
-              beautiful, responsive, user intuitive designs.
+              located in Minneapolis, MN. I enjoy turning concepts and designs into
+              front end UI and solving complex problems with code.
               </p>
             </div>
             <div style={{ marginTop: '40px' }}>
               <p>
-                When I am not building websites or automating all the things,
+                When I am not building web applications or coding,
                 I can be found hanging out with my family, walking my yappy dog,
                 or drinking coffee…. I’m always drinking coffee!
               </p>
