@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Title from '../Title/Title';
+import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
 import './About.css';
 
 class About extends Component {
@@ -8,9 +9,9 @@ class About extends Component {
       <>
         <Title>ABOUT</Title>
         <div className="about__container">
-          <span className="dot__about dot--red"></span>
-          <span className="dot__about dot--yellow"></span>
-          <span className="dot__about dot--green"></span>
+          <InteractiveButtons class="dot__about dot--red" />
+          <InteractiveButtons class="dot__about dot--yellow" />
+          <InteractiveButtons class="dot__about dot--green" />
           <div className="about__description">
 
             <div className="about__links">
@@ -27,7 +28,7 @@ class About extends Component {
             </div>
             <div style={{ marginTop: '40px' }}>
               <p>
-                When I am not building web applications or programming,
+                When I am not building web applications or coding,
                 I can be found hanging out with my family, walking my yappy dog,
                 or drinking coffee…. I’m always drinking coffee!
               </p>
