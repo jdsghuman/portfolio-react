@@ -22,12 +22,12 @@ class About extends Component {
               <p>
                 I am a Full Stack Software Engineer with a background in software automation,
               located in Minneapolis, MN. I enjoy turning concepts and designs into
-              front end UI and solving problems with code.
+              front end UI and solving complex problems with code.
               </p>
             </div>
             <div style={{ marginTop: '40px' }}>
               <p>
-                When I am not building websites or automating all the things,
+                When I am not building web applications or programming,
                 I can be found hanging out with my family, walking my yappy dog,
                 or drinking coffee…. I’m always drinking coffee!
               </p>
