@@ -9,9 +9,7 @@ class About extends Component {
       <>
         <Title>ABOUT</Title>
         <div className="about__container">
-          <InteractiveButtons class="dot__about dot--red" />
-          <InteractiveButtons class="dot__about dot--yellow" />
-          <InteractiveButtons class="dot__about dot--green" />
+          <InteractiveButtons page="about" />
           <div className="about__description">
 
             <div className="about__links">

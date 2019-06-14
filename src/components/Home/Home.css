@@ -4,7 +4,7 @@
     transform: translateY(10%);
     left: 0;
     max-width: 98%;
-}
+  }
 
 p {
   font-family: 'PT Mono', monospace;
@@ -110,6 +110,7 @@ p {
     border-radius: 5px;
     border-top: 30px solid #dddddd;
     margin-bottom: 80px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
   }
 
   .primary__detail {

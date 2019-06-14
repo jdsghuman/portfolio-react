@@ -6,15 +6,16 @@ import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
 import './Home.css';
 
 class Home extends Component {
+  state = {
+
+  }
 
   render() {
     return (
       <div className="wrapper">
         <div className="large-hero">
           <div className="large-hero__text-content">
-            <InteractiveButtons class="dot dot--red" />
-            <InteractiveButtons class="dot dot--yellow" />
-            <InteractiveButtons class="dot dot--green" />
+            <InteractiveButtons page="home" />
             <p className="primary__intro">&#47;&#47; Hi, my name is</p>
             <p className="primary__name">JD Ghuman</p>
             <p className="primary__description">I build things with software.</p>
