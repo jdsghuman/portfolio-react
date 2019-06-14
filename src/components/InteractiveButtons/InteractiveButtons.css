@@ -6,16 +6,15 @@
   display: none;
   position: absolute;
   top: -22px;
+  cursor: pointer;
+  z-index: 5;
+  line-height: 10px;
+  text-align: center;
+  font-weight: 300;
 }
 
 .dot__about {
-  height: 12px;
-  width: 12px;
-  margin-right: 5px;
-  border-radius: 50%;
-  display: inline;
-  position: absolute;
-  top: -22px;
+  line-height: 8px;
 }
 
 .dot--red {
@@ -33,6 +32,41 @@
   left: 59px;
 }
 
+.dot--green:hover {
+  left: 59px;
+}
+
 .large-hero {
   position: relative;
+}
+
+.sign {
+  transition: color .2s ease, fill .2s ease;
+}
+
+.sign--red {
+  color: #ff5f57;
+  font-size: 15px;
+}
+
+.sign--red:hover {
+  color: #000000;
+}
+
+.sign--yellow {
+  color: #ffbc2E;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.sign--yellow:hover {
+  color: #000000;
+}
+
+.sign--green {
+  fill: #28ca41;
+}
+
+.sign--green:hover {
+  fill: #000000;
 }
