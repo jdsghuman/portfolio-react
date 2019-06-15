@@ -4,12 +4,19 @@ import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
 import './About.css';
 
 class About extends Component {
+  state = {
+    maximize: false
+  }
   render() {
     return (
       <>
         <Title>ABOUT</Title>
-        <div className="about__container">
-          <InteractiveButtons page="about" />
+        <div className={this.state.maximize === false ? 'about__container' : 'about__container about__container--maximize'}>
+          <InteractiveButtons 
+            page="about" 
+            maximizeTerminal={this.maximizeTerminal}
+            minimizeTeriminal={this.minimizeTeriminal}
+          />
           <div className="about__description">
 
             <div className="about__links">
@@ -37,6 +44,9 @@ class About extends Component {
       </>
     );
   }
+
+  maximizeTerminal = () => this.setState({ maximize: true });
+  minimizeTeriminal = () => this.setState({ maximize: false });
 }
 
 export default About;

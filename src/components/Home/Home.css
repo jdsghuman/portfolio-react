@@ -113,8 +113,19 @@ p {
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
   }
 
+  .large-hero__text-content--closed {
+    background-color: none;
+    box-shadow: none;
+    border-top: none;
+    margin-top: 80px;
+  }
+
   .primary__detail {
     color: #ffffff;
+  }
+
+  .primary__detail--closed {
+    color: #000000;
   }
 
   .dot {
