@@ -15,6 +15,12 @@
 
 .dot__about {
   line-height: 8px;
+  display: inline;
+}
+
+.dot__about--yellow {
+  line-height: 12px;
+  margin-right: 20px;
 }
 
 .dot--red {
@@ -55,7 +61,7 @@
 
 .sign--yellow {
   color: #ffbc2E;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 300;
 }
 
