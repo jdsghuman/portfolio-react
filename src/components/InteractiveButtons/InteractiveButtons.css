@@ -70,3 +70,7 @@
 .sign--green:hover {
   fill: #000000;
 }
+
+.icons--hide {
+  display: none;
+}
