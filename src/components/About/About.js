@@ -15,7 +15,7 @@ class About extends Component {
           <InteractiveButtons 
             page="about" 
             maximizeTerminal={this.maximizeTerminal}
-            minimizeTeriminal={this.minimizeTeriminal}
+            minimizeTerminal={this.minimizeTerminal}
           />
           <div className="about__description">
 
@@ -46,7 +46,7 @@ class About extends Component {
   }
 
   maximizeTerminal = () => this.setState({ maximize: true });
-  minimizeTeriminal = () => this.setState({ maximize: false });
+  minimizeTerminal = () => this.setState({ maximize: false });
 }
 
 export default About;
