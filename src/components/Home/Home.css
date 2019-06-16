@@ -106,7 +106,7 @@ p {
 @media only screen and (min-height: 640px) and (min-width: 580px){
   .large-hero__text-content {
     background-color: rgba(3, 31, 37, 0.9);
-    padding: 5px 20px;
+    padding: 40px 40px;
     border-radius: 5px;
     border-top: 30px solid #dddddd;
     margin-bottom: 80px;

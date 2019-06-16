@@ -15,6 +15,11 @@
 
 .dot__about {
   line-height: 8px;
+  display: inline;
+}
+
+.dot__about--yellow {
+  line-height: 12px;
 }
 
 .dot--red {
@@ -42,11 +47,13 @@
 
 .sign {
   transition: color .2s ease, fill .2s ease;
+
 }
 
 .sign--red {
   color: #ff5f57;
   font-size: 15px;
+  padding-left: 1px;
 }
 
 .sign--red:hover {
@@ -55,7 +62,7 @@
 
 .sign--yellow {
   color: #ffbc2E;
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 300;
 }
 
