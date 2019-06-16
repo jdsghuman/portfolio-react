@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Title from '../Title/Title';
 import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
+import Terminal from '../Terminal/Terminal';
 import './About.css';
 
 class About extends Component {
   state = {
-    maximize: false
+    maximize: false,
+    open: true
   }
   render() {
     return (
@@ -37,7 +39,7 @@ class About extends Component {
                 I can be found hanging out with my family, walking my yappy dog,
                 or drinking coffee…. I’m always drinking coffee!
               </p>
-              <p className="terminal">>></p>
+              <Terminal openTerminal={this.state.open} />
             </div>
           </div>
         </div>

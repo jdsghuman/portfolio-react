@@ -57,23 +57,6 @@
   animation: blink .75s step-end infinite;
 }
 
-.terminal__home {
-  display: none;
-  overflow: hidden; 
-  border-right: 2px solid #2cbadb; 
-  color: #2cbadb;
-  padding-left: 15px;
-  padding-right: 6px;
-  animation: blink .75s step-end infinite;
-  width: 25px;
-}
-
-@media only screen and (min-height: 640px) and (min-width: 580px){
-  .terminal__home {
-    display: block;
-  }
-}
-
 /* The typewriter cursor effect */
 @keyframes blink {
   from, to { border-color: transparent }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
+import Terminal from '../Terminal/Terminal';
 
 import './Home.css';
 
@@ -29,7 +30,7 @@ class Home extends Component {
             <Link to="/projects">
               <Button classes="btn btn__home">Projects</Button>
             </Link>
-            <p className="terminal__home">>></p>
+            <Terminal openTerminal={this.state.open} />
           </div>
         </div>
       </div>
