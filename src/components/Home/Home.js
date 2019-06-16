@@ -9,7 +9,8 @@ class Home extends Component {
   state = {
     maximize: false,
     minimize: false,
-    open: true
+    open: true,
+    page: 'home'
   }
 
   render() {
@@ -24,7 +25,7 @@ class Home extends Component {
               open={this.state.open}
               page="home" />
             <HomeDetail minimize={this.state.minimize} open={this.state.open} />
-            <Terminal openTerminal={this.state.open} />
+            <Terminal page={this.state.page} openTerminal={this.state.open} />
           </div>
         </div>
       </div>

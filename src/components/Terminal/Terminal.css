@@ -1,4 +1,4 @@
-.terminal__home {
+.terminal__blink {
   display: none;
   overflow: hidden; 
   border-right: 2px solid #2cbadb; 
@@ -9,8 +9,12 @@
   color: #2cbadb;
 }
 
+.terminal__blink-about {
+  display: block;
+}
+
 @media only screen and (min-height: 640px) and (min-width: 580px){
-  .terminal__home {
+  .terminal__blink-home {
     display: block;
   }
 }

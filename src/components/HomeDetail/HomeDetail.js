@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import './HomeDetail.css';
-import moment from 'moment';
+import EmptyTerminal from '../EmptyTerminal/EmptyTerminal';
 
 class HomeDetail extends Component {
   state = {
@@ -23,24 +22,10 @@ class HomeDetail extends Component {
           </>
         }
         {this.props.minimize && this.props.open &&
-          <>
-            <p className="terminal__text">Last login: {this.state.date}</p>
-            <p className="terminal__text">>></p>
-            <p className="terminal__text">>></p>
-            <p className="terminal__text">>></p>
-            <p className="terminal__text">>></p>
-          </>
+          <EmptyTerminal />
         }
       </>
     )
-  }
-  componentDidMount() {
-    this.getDate();
-  }
-
-  getDate = () => {
-    let date = moment().format('llll')
-    this.setState({ date: date });
   }
 }
 

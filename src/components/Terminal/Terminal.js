@@ -5,7 +5,11 @@ class Terminal extends Component {
   render() {
     return (
       <>
-        {this.props.openTerminal && <p className="terminal__home">>></p>}
+        {this.props.openTerminal && this.props.page === 'home' &&
+          <p className="terminal__blink terminal__blink-home">>></p>}
+
+        {this.props.openTerminal && this.props.page === 'about' &&
+          <p className="terminal__blink terminal__blink-about">>></p>}
       </>
     )
   }

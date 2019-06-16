@@ -3,11 +3,14 @@ import Title from '../Title/Title';
 import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
 import Terminal from '../Terminal/Terminal';
 import './About.css';
+import EmptyTerminal from '../EmptyTerminal/EmptyTerminal';
 
 class About extends Component {
   state = {
     maximize: false,
-    open: true
+    minimize: false,
+    open: true,
+    page: 'about'
   }
   render() {
     return (
@@ -19,8 +22,8 @@ class About extends Component {
             maximizeTerminal={this.maximizeTerminal}
             minimizeTerminal={this.minimizeTerminal}
           />
-          <div className="about__description">
-
+          {!this.state.minimize && (
+            <div className="about__description">
             <div className="about__links">
               <a href="https://www.linkedin.com/in/jdghuman/" target="_blank" rel="noopener noreferrer"><img className="img__about" alt="linkedin icon" src="images/linkedin-brands.svg" /></a>
               <a className="link__email" href="mailto:jdsghuman@gmail.com"><img className="img__about" alt="email icon" src="images/envelope-regular.svg" /></a>
@@ -39,16 +42,22 @@ class About extends Component {
                 I can be found hanging out with my family, walking my yappy dog,
                 or drinking coffee…. I’m always drinking coffee!
               </p>
-              <Terminal openTerminal={this.state.open} />
             </div>
           </div>
+          )}
+          {this.state.minimize && this.state.open && 
+            <EmptyTerminal />
+          }
+          <Terminal page={this.state.page} openTerminal={this.state.open} />
         </div>
       </>
     );
   }
 
   maximizeTerminal = () => this.setState({ maximize: true });
-  minimizeTerminal = () => this.setState({ maximize: false });
+  minimizeTerminal = () => {
+    this.state.maximize ? this.setState({ maximize: false }) : this.setState({ minimize: true });
+  };
 }
 
 export default About;
