@@ -7,10 +7,42 @@
   animation: blink .75s step-end infinite;
   width: 25px;
   color: #2cbadb;
+  cursor: pointer;
+  outline: none;
+}
+
+#terminal__border {
+  cursor: pointer;
+}
+
+#terminal__border::before { 
+  content: '>>';
+}
+
+.terminal__blink--clicked {
+  display: none;
+  /* padding-left: 5px; */
+  /* overflow: hidden;  */
+  /* border-right: 2px solid #2cbadb;  */
+  /* animation: blink .75s step-end infinite; */
+  border-right: none;
+  outline: none;
+  width: 90%;
+}
+
+.terminal__text--clicked {
+  margin-left: 5px;
+  /* font-size: 12px; */
+  outline-style: none;
 }
 
 .terminal__blink-about {
   display: block;
+}
+
+.terminal__cursor {
+  /* display: inline-block;  */
+  margin-left: 5px;
 }
 
 @media only screen and (min-height: 640px) and (min-width: 580px){
