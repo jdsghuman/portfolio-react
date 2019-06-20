@@ -48,7 +48,7 @@ class About extends Component {
           {this.state.minimize && this.state.open && 
             <EmptyTerminal />
           }
-          <Terminal page={this.state.page} openTerminal={this.state.open} />
+          <Terminal clear={this.minimizeTerminal} page={this.state.page} openTerminal={this.state.open} />
         </div>
       </>
     );
