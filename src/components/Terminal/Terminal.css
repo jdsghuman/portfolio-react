@@ -50,3 +50,7 @@
     display: block;
   }
 }
+
+.terminal__command {
+  color: #2cbadb;
+}

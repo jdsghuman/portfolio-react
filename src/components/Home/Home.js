@@ -25,7 +25,7 @@ class Home extends Component {
               open={this.state.open}
               page="home" />
             <HomeDetail minimize={this.state.minimize} open={this.state.open} />
-            <Terminal page={this.state.page} openTerminal={this.state.open} />
+            <Terminal clear={this.minimizeTerminal} page={this.state.page} openTerminal={this.state.open} />
           </div>
         </div>
       </div>
