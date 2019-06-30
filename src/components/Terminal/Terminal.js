@@ -9,14 +9,14 @@ class Terminal extends Component {
   }
   render() {
     return (
-      <span onKeyPress={this.keyPressed} onClick={this.clickTerminal}>
+      <div onKeyPress={this.keyPressed} onClick={this.clickTerminal}>
         {this.state.command ? <p className="terminal__command">{this.state.command}</p> : null}
         {this.props.openTerminal && this.props.page === 'home' &&
-          <p id="terminal__border" className={!this.state.clickedTerminal ? 'terminal__blink terminal__blink-home' : 'terminal__blink terminal__blink--clicked terminal__blink-home'}><span contentEditable="true" className="terminal__text--clicked"></span></p>}
+          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input id="terminal__input-border" autoComplete="off" autocapitalize="none" spellcheck="false"></input></>}
         {this.state.showTerminal && <input styles={{ display: 'inline' }} type="text" />}
         {this.props.openTerminal && this.props.page === 'about' &&
-          <p id="terminal__border" className={!this.state.clickedTerminal ? 'terminal__blink terminal__blink-about' : 'terminal__blink terminal__blink--clicked terminal__blink-about'}><span contentEditable="true" className="terminal__text--clicked"></span></p>}
-      </span>
+          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input id="terminal__input-border" autoComplete="off" autocapitalize="none" spellcheck="false"></input></>}
+      </div>
     )
   }
 
@@ -31,12 +31,12 @@ class Terminal extends Component {
   }
 
   checkStatement = () => {
-    const enteredText = document.querySelector('.terminal__text--clicked').innerHTML.toLowerCase();
+    const enteredText = document.querySelector('#terminal__input-border').value.toLowerCase();
 
     switch (true) {
       case enteredText.includes('clear'):
         this.props.clear();
-        document.querySelector('.terminal__text--clicked').innerHTML = '';
+        document.querySelector('#terminal__input-border').innerHTML = '';
         this.outputTerminalResponse('');
         break;
       case enteredText.includes('whoami'):
@@ -83,7 +83,7 @@ class Terminal extends Component {
       case enteredText.includes('help'):
         const helpCommands = ['cd', 'cd home', 'cd projects', 'cd about', 'cd resume', 'clear', 'echo', 'exit', 'help', 'jdghuman', 'ls', 'mkdir', 'pwd', 'sudo', '{url}.com e.g. google.com', 'whoami'];
         this.outputTerminalResponse(this.iterateHelpCommands(helpCommands));
-        
+
         break;
       case enteredText.includes('cd'):
         this.outputTerminalResponse('>> cd');
@@ -94,8 +94,10 @@ class Terminal extends Component {
   };
 
   outputTerminalResponse = (response) => {
+    let brs = document.querySelector('#terminal__input-border');
+    brs.value = '';
     setTimeout(() => {
-      let brs = document.querySelector('.terminal__text--clicked');
+      let brs = document.querySelector('#terminal__input-border');
       while (brs.firstChild) {
         brs.removeChild(brs.firstChild);
       }
@@ -110,7 +112,7 @@ class Terminal extends Component {
   iterateHelpCommands = (helpCommands) => {
     const space = `\u00A0\u00A0\u00A0\u00A0`
     return helpCommands.map(command => `'${command}' ${space}`);
-  } 
+  }
 }
 
 export default withRouter(Terminal);
