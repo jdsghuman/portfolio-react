@@ -1,38 +1,37 @@
-.terminal__blink {
-  display: none;
-  overflow: hidden; 
-  border-right: 2px solid #2cbadb; 
-  padding-left: 0px;
-  padding-right: 6px;
-  animation: blink .75s step-end infinite;
-  width: 25px;
+#terminal__input-border {
+  cursor: pointer;
+  display: inline;
+  padding-left: 29px;
+  font-size: 1rem;
+  font-family: 'PT Mono', monospace;
   color: #2cbadb;
   cursor: pointer;
   outline: none;
+  background: transparent;
+  border: none;
 }
 
-#terminal__border {
-  cursor: pointer;
+.terminal__blink {
+  display: none;
+  overflow: hidden;   
 }
 
-#terminal__border::before { 
-  content: '>>';
+.static-value {
+  position:absolute;
+  display: block;
+	color:#2cbadb;
+  width: 25px;
+  padding-right: 4px;
+  animation: blink .75s step-end infinite;
+  border-right: 1px solid #2cbadb;
 }
 
 .terminal__blink--clicked {
-  display: none;
-  /* padding-left: 5px; */
-  /* overflow: hidden;  */
-  /* border-right: 2px solid #2cbadb;  */
-  /* animation: blink .75s step-end infinite; */
   border-right: none;
-  outline: none;
-  width: 90%;
 }
 
 .terminal__text--clicked {
   margin-left: 5px;
-  /* font-size: 12px; */
   outline-style: none;
 }
 
@@ -41,14 +40,13 @@
 }
 
 .terminal__cursor {
-  /* display: inline-block;  */
   margin-left: 5px;
 }
 
 @media only screen and (min-height: 640px) and (min-width: 580px){
-  .terminal__blink-home {
+  /* .terminal__blink-home {
     display: block;
-  }
+  } */
 }
 
 .terminal__command {
