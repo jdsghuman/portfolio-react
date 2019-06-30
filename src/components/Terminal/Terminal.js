@@ -80,6 +80,11 @@ class Terminal extends Component {
       case enteredText.includes('.com'):
         window.location.replace(`https://${enteredText}`);
         break;
+      case enteredText.includes('help'):
+        const helpCommands = ['cd', 'cd home', 'cd projects', 'cd about', 'cd resume', 'clear', 'echo', 'exit', 'help', 'jdghuman', 'ls', 'mkdir', 'pwd', 'sudo', '{url}.com e.g. google.com', 'whoami'];
+        this.outputTerminalResponse(this.iterateHelpCommands(helpCommands));
+        
+        break;
       case enteredText.includes('cd'):
         this.outputTerminalResponse('>> cd');
         break;
@@ -101,6 +106,11 @@ class Terminal extends Component {
   checkHomePath = () => {
     return this.props.location.pathname !== '/' ? this.props.history.push('/') : this.outputTerminalResponse('');
   }
+
+  iterateHelpCommands = (helpCommands) => {
+    const space = `\u00A0\u00A0\u00A0\u00A0`
+    return helpCommands.map(command => `'${command}' ${space}`);
+  } 
 }
 
 export default withRouter(Terminal);
