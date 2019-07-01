@@ -52,12 +52,21 @@
   margin-left: 5px;
 }
 
+.terminal__command {
+  display: none;
+  color: #2cbadb;
+}
+
+.terminal__command--about {
+  display: block;
+}
+
 @media only screen and (min-height: 640px) and (min-width: 580px){
   .terminal__container {
     display: block;
   }
-}
 
-.terminal__command {
-  color: #2cbadb;
+  .terminal__command {
+    display: block;
+  }
 }
