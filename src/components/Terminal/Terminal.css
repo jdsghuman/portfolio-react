@@ -1,3 +1,12 @@
+.terminal__container {
+  display: none;
+  padding-bottom: 10px;
+}
+
+#terminal__container--about {
+  display: block;
+}
+
 #terminal__input-border {
   cursor: pointer;
   display: inline;
@@ -44,9 +53,9 @@
 }
 
 @media only screen and (min-height: 640px) and (min-width: 580px){
-  /* .terminal__blink-home {
+  .terminal__container {
     display: block;
-  } */
+  }
 }
 
 .terminal__command {
