@@ -9,13 +9,13 @@ class Terminal extends Component {
   }
   render() {
     return (
-      <div onKeyPress={this.keyPressed} onClick={this.clickTerminal}>
-        {this.state.command ? <p className="terminal__command">{this.state.command}</p> : null}
+      <div className={this.props.openTerminal ? 'terminal__container' : null} id="terminal__container--about" onKeyPress={this.keyPressed} onClick={this.clickTerminal}>
+        {this.state.command && this.props.openTerminal ? <p className={this.props.page === 'home' ? 'terminal__command' : 'terminal__command terminal__command--about'}>{this.state.command}</p> : <p></p>}
         {this.props.openTerminal && this.props.page === 'home' &&
-          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input id="terminal__input-border" autoComplete="off" autocapitalize="none" spellcheck="false"></input></>}
+          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input id="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
         {this.state.showTerminal && <input styles={{ display: 'inline' }} type="text" />}
         {this.props.openTerminal && this.props.page === 'about' &&
-          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input id="terminal__input-border" autoComplete="off" autocapitalize="none" spellcheck="false"></input></>}
+          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input id="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
       </div>
     )
   }

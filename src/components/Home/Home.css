@@ -20,7 +20,7 @@ p {
 
 @keyframes intro {
   0% {
-    transform: translateY(-1000%);
+    transform: translateY(-1500%);
   }
   100% {
     transform: translateY(0%);

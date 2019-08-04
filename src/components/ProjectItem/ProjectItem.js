@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button';
+import ImageDisplay from './ImageDisplay/ImageDisplay';
 import './ProjectItem.css';
 
 class ProjectItem extends Component {
-
   render() {
     let project = this.props.projectData;
     return (
@@ -12,7 +12,7 @@ class ProjectItem extends Component {
         <h2 className="project-item__title">{project.name}</h2>
         <div className="project-item__display">
           {/* Project image */}
-          <img className="project-item__img" alt="project" src={project.thumbnail} />
+          <ImageDisplay thumbnail={project.thumbnail} />
           <div className="project-item_button-display">
             {/* External conditional rendering for external project links */}
             {project.github &&
