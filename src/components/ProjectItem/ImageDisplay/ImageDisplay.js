@@ -5,9 +5,11 @@ class ImageDisplay extends Component {
     isLoaded: false
   }
   imageLoaded = () => {
-    this.setState({
-      isLoaded: true
-    })
+    setTimeout(() => {
+      this.setState({
+        isLoaded: true
+      })
+    }, 1000);
   }
 
   renderSpinner = (image) => {
