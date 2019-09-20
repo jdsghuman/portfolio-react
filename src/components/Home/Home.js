@@ -41,6 +41,9 @@ class Home extends Component {
       open: false,
       maximize: false 
     })
+    if (this.state.open && this.state.minimize)  {
+      this.props.history.push('/');
+    }
   };
 }
 

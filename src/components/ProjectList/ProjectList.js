@@ -5,6 +5,10 @@ import Title from '../Title/Title';
 
 class Project extends Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  
   render() {
     let projects = this.props.projects;
     return (
