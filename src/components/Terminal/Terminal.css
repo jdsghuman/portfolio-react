@@ -70,3 +70,9 @@
     display: block;
   }
 }
+
+@media only screen and (max-width: 579px) {
+  .terminal__home {
+    display: none !important;
+  }
+}
