@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
 import Container from '../Container/Container';
 import { BrowserRouter as Router } from 'react-router-dom';
 import SideDrawer from '../SideDrawer/SideDrawer';
@@ -46,7 +45,6 @@ class App extends Component {
             <SideDrawer show={this.state.sidedrawerOpen} click={this.backdropClickHandler} />
             {backdrop}
             <Container />
-            <Footer />
           </>
         </Router>
       </div>
