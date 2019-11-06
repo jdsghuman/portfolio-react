@@ -19,7 +19,7 @@ class ProjectItem extends Component {
               <Button url={project.github} classes="btn btn__project">GitHub</Button>
             }
             {project.website &&
-              <Button url={project.website} classes="btn btn__project">Website</Button>
+              <Button url={project.website} classes="btn btn__project">{project.name}</Button>
             }
           </div>
         </div>

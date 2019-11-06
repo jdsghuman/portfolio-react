@@ -104,7 +104,7 @@ p {
   }
 }
 
-@media only screen and (min-height: 640px) and (min-width: 580px){
+@media only screen and (min-height: 540px) and (min-width: 580px){
   .large-hero__text-content {
     background-color: rgba(3, 41, 57, 1);
     padding: 40px 40px;

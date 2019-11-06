@@ -81,8 +81,8 @@
   }
 
   .project-item_button-display {
+    flex-direction: column;
     margin-top: 20px;
-    flex-direction: row;
     justify-content: space-between;
   }
 
