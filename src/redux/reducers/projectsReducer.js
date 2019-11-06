@@ -6,9 +6,9 @@ const projects = [
     name: 'Bobbieleelicious',
     description: 'Full stack recipe application with responsive design for Mobile and Web that includes a Node backend.',
     thumbnail: 'images/login.png',
-    website: '',
+    website: 'https://www.bobbieleelicious.com',
     github: 'https://github.com/jdsghuman/solo-project-bobbieleelicious',
-    tags: ['React', 'Redux-Saga', 'Node', 'Express', 'PostgreSQL']
+    tags: ['React', 'Redux-Saga', 'Node', 'Express', 'PostgreSQL', 'Heroku']
   },
   {
     id: 2,

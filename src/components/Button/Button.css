@@ -23,6 +23,7 @@
   border: 2px solid #2cbadb;
   padding: 9px 14px;
   font-size: 1rem;
+  align-self: center;
 }
 
 .btn__home {
