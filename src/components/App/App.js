@@ -4,9 +4,16 @@ import Container from '../Container/Container';
 import { BrowserRouter as Router } from 'react-router-dom';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Backdrop from '../Backdrop/Backdrop';
+import createHistory from 'history/createBrowserHistory'
 import ReactGA from 'react-ga';
 
 import './App.css';
+
+const history = createHistory()
+history.listen(location => {
+	ReactGA.set({ page: location.pathname })
+	ReactGA.pageview(location.pathname)
+})
 
 class App extends Component {
   state = {
@@ -14,8 +21,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    ReactGA.initialize('UA-78377127-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview(window.location.pathname)
   }
 
   backdropClickHandler = () => {
