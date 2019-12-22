@@ -9,13 +9,13 @@ class Terminal extends Component {
   }
   render() {
     return (
-      <div className={(this.props.openTerminal ? 'terminal__container ' : null) + (this.props.page === 'home' ? 'terminal__home' : '')} id="terminal__container--about" onKeyPress={this.keyPressed} onClick={this.clickTerminal}>
+      <div className={(this.props.openTerminal ? 'terminal__container ' : null) + (this.props.page === 'home' ? 'terminal__home' : '')} className="terminal__container--about" onKeyPress={this.keyPressed} onClick={this.clickTerminal}>
         {this.state.command && this.props.openTerminal ? <p className={this.props.page === 'home' ? 'terminal__command' : 'terminal__command terminal__command--about'}>{this.state.command}</p> : <p></p>}
         {this.props.openTerminal && this.props.page === 'home' &&
-          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input id="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
+          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input className="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
         {this.state.showTerminal && <input styles={{ display: 'inline' }} type="text" />}
         {this.props.openTerminal && this.props.page === 'about' &&
-          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input id="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
+          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input className="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
       </div>
     )
   }
@@ -31,12 +31,12 @@ class Terminal extends Component {
   }
 
   checkStatement = () => {
-    const enteredText = document.querySelector('#terminal__input-border').value.toLowerCase();
+    const enteredText = document.querySelector('.terminal__input-border').value.toLowerCase();
 
     switch (true) {
       case enteredText.includes('clear'):
         this.props.clear();
-        document.querySelector('#terminal__input-border').innerHTML = '';
+        document.querySelector('.terminal__input-border').innerHTML = '';
         this.outputTerminalResponse('');
         break;
       case enteredText.includes('whoami'):
@@ -94,10 +94,10 @@ class Terminal extends Component {
   };
 
   outputTerminalResponse = (response) => {
-    let brs = document.querySelector('#terminal__input-border');
+    let brs = document.querySelector('.terminal__input-border');
     brs.value = '';
     setTimeout(() => {
-      let brs = document.querySelector('#terminal__input-border');
+      let brs = document.querySelector('.terminal__input-border');
       while (brs.firstChild) {
         brs.removeChild(brs.firstChild);
       }

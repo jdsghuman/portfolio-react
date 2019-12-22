@@ -7,7 +7,7 @@
   display: block;
 }
 
-#terminal__input-border {
+.terminal__input-border {
   cursor: pointer;
   display: inline;
   padding-left: 29px;

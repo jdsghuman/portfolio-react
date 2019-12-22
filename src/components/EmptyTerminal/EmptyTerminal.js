@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import moment from 'moment';
 import './EmptyTerminal.css';
 
-class EmptyTerminal extends Component {
-  render() {
+const EmptyTerminal = () => {
     return (
       <>
         <p className="terminal__text">Last login: {moment().format('llll')}</p>
@@ -12,8 +11,7 @@ class EmptyTerminal extends Component {
         <p className="terminal__text">>></p>
         <p className="terminal__text">>></p>
       </>
-    )
-  }
+    );
 }
 
 export default EmptyTerminal;

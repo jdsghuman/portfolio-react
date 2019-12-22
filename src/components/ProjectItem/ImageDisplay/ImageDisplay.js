@@ -1,25 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class ImageDisplay extends Component {
-  state = {
-    isLoaded: false
-  }
-  imageLoaded = () => {
+const ImageDisplay = ({ thumbnail }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const imageLoaded = () => {
     setTimeout(() => {
-      this.setState({
-        isLoaded: true
-      })
+      setIsLoaded(true);
     }, 800);
   }
-
-  render() {
-    return (
-      <>
-        {!this.state.isLoaded ? <div className="loader"></div> : null}
-        <img className={this.state.isLoaded ? 'project-item__img' : '' } style={this.state.isLoaded ? {} : {display: 'none'}} alt="project" src={this.props.thumbnail} onLoad={this.imageLoaded} />
-      </>
-    );
-  }
+  return (
+    <>
+      {!isLoaded ? <div className="loader"></div> : null}
+      <img className={isLoaded ? 'project-item__img' : ''} style={isLoaded ? {} : { display: 'none' }} alt="project" src={thumbnail} onLoad={imageLoaded} />
+    </>
+  );
 }
 
 export default ImageDisplay;
