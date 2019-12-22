@@ -1,50 +1,46 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
 import Terminal from '../Terminal/Terminal';
 import HomeDetail from '../HomeDetail/HomeDetail';
 
 import './Home.css';
 
-class Home extends Component {
-  state = {
-    maximize: false,
-    minimize: false,
-    open: true,
-    page: 'home'
-  }
+const Home = ({ history }) => {
+  const [maximize, setMaximize] = useState(false);
+  const [minimize, setMinimize] = useState(false);
+  const [open, setOpen] = useState(true);
+  const [page] = useState('home');
 
-  render() {
-    return (
-      <div className={this.state.maximize === false ? 'wrapper' : 'wrapper__maximize'}>
-        <div className="large-hero">
-          <div className={this.state.open === true ? 'large-hero__text-content' : 'large-hero__text-content--closed' }>
-            <InteractiveButtons 
-              maximizeTerminal={this.maximizeTerminal}
-              minimizeTerminal={this.minimizeTerminal} 
-              closeTerminal={this.closeTerminal}
-              open={this.state.open}
-              page="home" />
-            <HomeDetail minimize={this.state.minimize} open={this.state.open} />
-            <Terminal clear={this.minimizeTerminal} page={this.state.page} openTerminal={this.state.open} />
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const maximizeTerminal = () => setMaximize(true);
 
-  maximizeTerminal = () => this.setState({ maximize: true });
-  minimizeTerminal = () => {
-    this.state.maximize ? this.setState({ maximize: false }) : this.setState({ minimize: true });
+  const minimizeTerminal = () => {
+    maximize ? setMaximize(false) : setMinimize(true);
   };
-  closeTerminal = () => {
-    this.setState({ 
-      open: false,
-      maximize: false 
-    })
-    if (this.state.open && this.state.minimize)  {
-      this.props.history.push('/');
+
+  const closeTerminal = () => {
+    setOpen(false);
+    setMaximize(false);
+    if (open && minimize) {
+      history.push('/');
     }
   };
+
+  return (
+    <div className={maximize === false ? 'wrapper' : 'wrapper__maximize'}>
+      <div className="large-hero">
+        <div className={open === true ? 'large-hero__text-content' : 'large-hero__text-content--closed'}>
+          <InteractiveButtons
+            maximizeTerminal={maximizeTerminal}
+            minimizeTerminal={minimizeTerminal}
+            closeTerminal={closeTerminal}
+            open={open}
+            page="home" />
+          <HomeDetail minimize={minimize} open={open} />
+          <Terminal clear={minimizeTerminal} page={page} openTerminal={open} />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 
