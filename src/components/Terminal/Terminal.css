@@ -62,11 +62,13 @@
 }
 
 @media only screen and (min-height: 640px) and (min-width: 580px){
-  .terminal__container {
+  .terminal__command {
     display: block;
   }
+}
 
-  .terminal__command {
+@media only screen and (min-height: 500px) and (min-width: 580px) {
+  .terminal__container {
     display: block;
   }
 }

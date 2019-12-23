@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const title = {
   display: 'block',
@@ -10,12 +10,10 @@ const title = {
   borderBottom: '3px solid rgb(3, 31, 37)'
 }
 
-class Title extends Component {
-  render() {
+const Title = (props) => {
     return (
-      <h2 style={title}>{this.props.children}</h2>
+      <h2 style={title}>{props.children}</h2>
     );
-  }
 }
 
 export default Title;

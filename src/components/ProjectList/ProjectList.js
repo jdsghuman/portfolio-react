@@ -1,37 +1,29 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import ProjectItem from '../ProjectItem/ProjectItem';
 import Title from '../Title/Title';
+import { useSelector, useDispatch } from 'react-redux';
 
-class Project extends Component {
+const Project = ({ projects }) => {
+  const myProjects = useSelector(state => state.projects);
 
-  componentDidMount() {
+  useEffect(() => {
     window.scrollTo(0, 0);
-  }
-  
-  render() {
-    let projects = this.props.projects;
-    return (
-      <div className="wrapper">
-        <Title>PROJECTS</Title>
-        {projects.length > 0 && (
-          projects.map(project => {
-            return <ProjectItem
-              key={project.id}
-              projectData={project}
-            />
-          })
-        )
-        }
-      </div>
-    );
-  }
+  }, []);
+
+  return (
+    <div className="wrapper">
+      <Title>PROJECTS</Title>
+      {myProjects.length > 0 && (
+        myProjects.map(project => {
+          return <ProjectItem
+            key={project.id}
+            projectData={project}
+          />
+        })
+      )
+      }
+    </div>
+  );
 }
 
-const mapStateToProps = store => {
-  return {
-    projects: store.projects
-  }
-}
-
-export default connect(mapStateToProps)(Project);
+export default Project;
