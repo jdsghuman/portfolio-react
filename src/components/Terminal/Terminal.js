@@ -1,67 +1,53 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import './Terminal.css';
 
-class Terminal extends Component {
-  state = {
-    clickedTerminal: false,
-    command: ''
-  }
-  render() {
-    return (
-      <div className={(this.props.openTerminal ? 'terminal__container ' : null) + (this.props.page === 'home' ? 'terminal__home' : '')} className="terminal__container--about" onKeyPress={this.keyPressed} onClick={this.clickTerminal}>
-        {this.state.command && this.props.openTerminal ? <p className={this.props.page === 'home' ? 'terminal__command' : 'terminal__command terminal__command--about'}>{this.state.command}</p> : <p></p>}
-        {this.props.openTerminal && this.props.page === 'home' &&
-          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input className="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
-        {this.state.showTerminal && <input styles={{ display: 'inline' }} type="text" />}
-        {this.props.openTerminal && this.props.page === 'about' &&
-          <><label className={!this.state.clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input className="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
-      </div>
-    )
+const Terminal = ({ clear, history, location, openTerminal, page }) => {
+  const [clickedTerminal, setClickedTerminal] = useState(false);
+  const [command, setCommand] = useState('');
+
+  const clickTerminal = () => {
+    setClickedTerminal(true);
   }
 
-  clickTerminal = () => {
-    this.setState({ clickedTerminal: true });
-  }
-
-  keyPressed = (e) => {
+  const keyPressed = (e) => {
     if (e.key === 'Enter') {
-      this.checkStatement();
+      checkStatement();
     }
   }
 
-  checkStatement = () => {
+  const checkStatement = () => {
     const enteredText = document.querySelector('.terminal__input-border').value.toLowerCase();
 
     switch (true) {
       case enteredText.includes('clear'):
-        this.props.clear();
+        clear();
         document.querySelector('.terminal__input-border').innerHTML = '';
-        this.outputTerminalResponse('');
+        outputTerminalResponse('');
         break;
       case enteredText.includes('whoami'):
-        this.outputTerminalResponse('jdghuman');
+        outputTerminalResponse('jdghuman');
         break;
       case enteredText.includes('jdghuman'):
-        this.outputTerminalResponse('i am the mind');
+        outputTerminalResponse('i am the mind');
         break;
       case enteredText.includes('ls'):
-        this.outputTerminalResponse('Home   Projects   About   Resume');
+        outputTerminalResponse('Home   Projects   About   Resume');
         break;
       case enteredText.includes('pwd'):
-        this.outputTerminalResponse('/Users/jdghuman');
+        outputTerminalResponse('/Users/jdghuman');
         break;
       case enteredText.includes('cd home'):
-        this.checkHomePath();
+        checkHomePath();
         break;
       case enteredText.includes('cd projects'):
-        this.props.history.push('/projects');
+        history.push('/projects');
         break;
       case enteredText.includes('cd about'):
-        this.props.history.push('/about');
+        history.push('/about');
         break;
       case enteredText.includes('cd resume'):
-        this.props.history.push('/about');
+        history.push('/about');
         window.location.replace("https://jdghuman.com/resume.pdf");
         break;
       case enteredText.includes('exit'):
@@ -69,31 +55,31 @@ class Terminal extends Component {
         break;
       case enteredText.includes('echo'):
         let echoText = enteredText.replace('echo', '');
-        this.outputTerminalResponse(echoText);
+        outputTerminalResponse(echoText);
         break;
       case enteredText.includes('mkdir'):
-        this.outputTerminalResponse('You do not have permission to run this command.');
+        outputTerminalResponse('You do not have permission to run this command.');
         break;
       case enteredText.includes('sudo'):
-        this.outputTerminalResponse('You do not have permission to run this command.');
+        outputTerminalResponse('You do not have permission to run this command.');
         break;
       case enteredText.includes('.com'):
         window.location.replace(`https://${enteredText}`);
         break;
       case enteredText.includes('help'):
         const helpCommands = ['cd', 'cd home', 'cd projects', 'cd about', 'cd resume', 'clear', 'echo', 'exit', 'help', 'jdghuman', 'ls', 'mkdir', 'pwd', 'sudo', '{url}.com e.g. google.com', 'whoami'];
-        this.outputTerminalResponse(this.iterateHelpCommands(helpCommands));
+        outputTerminalResponse(iterateHelpCommands(helpCommands));
 
         break;
       case enteredText.includes('cd'):
-        this.outputTerminalResponse('>> cd');
+        outputTerminalResponse('>> cd');
         break;
       default:
-        this.outputTerminalResponse('-bash: adfa: command not found');
+        outputTerminalResponse('-bash: adfa: command not found');
     }
   };
 
-  outputTerminalResponse = (response) => {
+  const outputTerminalResponse = (response) => {
     let brs = document.querySelector('.terminal__input-border');
     brs.value = '';
     setTimeout(() => {
@@ -101,18 +87,28 @@ class Terminal extends Component {
       while (brs.firstChild) {
         brs.removeChild(brs.firstChild);
       }
-      this.setState({ command: response });
+      setCommand(response);
     }, 50);
   }
 
-  checkHomePath = () => {
-    return this.props.location.pathname !== '/' ? this.props.history.push('/') : this.outputTerminalResponse('');
+  const checkHomePath = () => {
+    return location.pathname !== '/' ? history.push('/') : outputTerminalResponse('');
   }
 
-  iterateHelpCommands = (helpCommands) => {
+  const iterateHelpCommands = (helpCommands) => {
     const space = `\u00A0\u00A0\u00A0\u00A0`
     return helpCommands.map(command => `'${command}' ${space}`);
   }
+
+  return (
+    <div className={(openTerminal ? 'terminal__container ' : null) + (page === 'home' ? 'terminal__home' : '')}  id={`${page === 'about' ? 'terminal__container--about'  : ''}`} onKeyPress={keyPressed} onClick={clickTerminal}>
+      {openTerminal ? <p className={page === 'home' ? 'terminal__command terminal__command--about' : 'terminal__command terminal__command--about'}>{command}</p> : <p></p>}
+      {openTerminal && page === 'home' &&
+        <><label className={!clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input className="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
+      {openTerminal && page === 'about' &&
+        <><label className={!clickedTerminal ? 'static-value' : 'static-value terminal__blink--clicked'}>>></label><input className="terminal__input-border" autoComplete="off" autoCapitalize="none" spellCheck="false"></input></>}
+    </div>
+  )
 }
 
 export default withRouter(Terminal);
