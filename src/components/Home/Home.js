@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
 import Terminal from '../Terminal/Terminal';
 import HomeDetail from '../HomeDetail/HomeDetail';
 
 import './Home.css';
 
-const Home = ({ history }) => {
+const Home = () => {
+  let history = useHistory();
   const [maximize, setMaximize] = useState(false);
   const [minimize, setMinimize] = useState(false);
   const [open, setOpen] = useState(true);
@@ -42,7 +44,5 @@ const Home = ({ history }) => {
     </div>
   );
 }
-
-
 
 export default Home;
