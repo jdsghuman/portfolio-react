@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import ProjectItem from '../ProjectItem/ProjectItem';
 import Title from '../Title/Title';
-import { useSelector, useDispatch } from 'react-redux';
 
-const Project = ({ projects }) => {
-  const myProjects = useSelector(state => state.projects);
+const Project = ({ myProjects }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -13,17 +12,21 @@ const Project = ({ projects }) => {
   return (
     <div className="wrapper">
       <Title>PROJECTS</Title>
-      {myProjects.length > 0 && (
-        myProjects.map(project => {
+      {myProjects.map(project => {
           return <ProjectItem
             key={project.id}
-            projectData={project}
+            project={project}
           />
         })
-      )
       }
     </div>
   );
 }
 
-export default Project;
+const mapStateToProps = state => {
+  return {
+    myProjects: state.projects 
+  }
+}
+
+export default connect(mapStateToProps)(Project);

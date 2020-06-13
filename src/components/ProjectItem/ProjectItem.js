@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from '../Button/Button';
 import ImageDisplay from './ImageDisplay/ImageDisplay';
-import './ProjectItem.css';
+import styles from './ProjectItem.module.scss';
 
-class ProjectItem extends Component {
-  render() {
-    let project = this.props.projectData;
+const ProjectItem = ({ project }) => {
     return (
-      <div className="project-item">
-        {/* Project title */}
-        <h2 className="project-item__title">{project.name}</h2>
-        <div className="project-item__display">
-          {/* Project image */}
+      <div className={styles['project-item']}>
+        <h2 className={styles['project-item__title']}>{project.name}</h2>
+        <div className={styles['project-item__display']}>
           <ImageDisplay thumbnail={project.thumbnail} />
-          <div className="project-item_button-display">
-            {/* External conditional rendering for external project links */}
+          <div className={styles['project-item__button-container']}>
             {project.github &&
               <Button url={project.github} classes="btn btn__project">GitHub</Button>
             }
@@ -23,16 +18,14 @@ class ProjectItem extends Component {
             }
           </div>
         </div>
-        {/* Project description */}
-        <p className="project-item__description">{project.description}</p>
+        <p className={styles['project-item__description']}>{project.description}</p>
         <div style={{textAlign: 'center'}}>
-          <p className="tag">Built with: </p> {project.tags.map(tag => {
+          <p className={styles['project-item__tag']}>Built with: </p> {project.tags.map(tag => {
             return <p key={tag} style={tagStyles}>{tag}</p>
           })}
         </div>
       </div>
     );
-  }
 }
 
 const tagStyles = {
