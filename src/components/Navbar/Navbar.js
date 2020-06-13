@@ -1,25 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavbarDesktop from './NavbarDesktop';
+import NavbarDesktop from './NavbarDesktop/NavbarDesktop';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
-import './Navbar.css';
+import styles from './Navbar.module.scss';
 
 const Navbar = ({ toggleSideDrawer }) => {
 
   return (
     <nav>
-      <div className="nav nav__primary">
-        <div className="nav-left">
+      <div className={styles.nav}>
+        <div>
           <Link to="/">
-            <img src="/images/JD-Develop-white.png" alt="Logo" />
+            <img className={styles.nav__image} src="/images/JD-Develop-white.png" alt="Logo" />
           </Link>
         </div>
-        <div className="nav-right">
-          <div className="menu--mobile">
+        <div className={styles.nav__right}>
+          <div className={styles['nav__menu-mobile']}>
             {/* Mobile/Tablet menu icon */}
             <DrawerToggleButton click={toggleSideDrawer} />
           </div>
-          <div className="menu--desktop">
+          <div className={styles.nav__desktop}>
             <NavbarDesktop />
           </div>
         </div>

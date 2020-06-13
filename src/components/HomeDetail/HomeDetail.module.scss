@@ -60,3 +60,12 @@
     transform: translateX(0%);
   }
 }
+
+@keyframes description {
+  0% {
+    transform: translateX(500%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

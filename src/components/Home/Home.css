@@ -10,15 +10,6 @@ p {
   font-family: 'PT Mono', monospace;
 }
 
-@keyframes description {
-  0% {
-    transform: translateX(500%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
 .btn--dark {
   margin-bottom: 80px;
 }
