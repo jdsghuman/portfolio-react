@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from 'history'
 import Navbar from '../Navbar/Navbar';
-import Container from '../Container/Container';
-import { BrowserRouter as Router } from 'react-router-dom';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Backdrop from '../Backdrop/Backdrop';
-import { createBrowserHistory } from 'history'
-import ReactGA from 'react-ga';
-
+import Footer from '../Footer/Footer';
+import Home from '../Home/Home';
+import ProjectList from '../ProjectList/ProjectList';
+import About from '../About/About';
+import Title from '../Title/Title';
 import './App.css';
 
 ReactGA.initialize('UA-78377127-1')
@@ -43,7 +46,13 @@ const App = () => {
           <Navbar toggleSideDrawer={toggleSideDrawer} />
           <SideDrawer show={sidedrawerOpen} click={closeBackdrop} />
           {backdrop}
-          <Container />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/projects" component={ProjectList} />
+            <Route path="/about" component={About} />
+            <Route render={() => <Title>404</Title>} />
+          </Switch>
+          <Footer />
         </>
       </Router>
     </div>

@@ -15,8 +15,8 @@ const HomeDetail = ({ minimize, open }) => {
           <p className={styles.primary__intro}>&#47;&#47; Hi, my name is</p>
           <p className={styles.primary__name}>JD Ghuman</p> <br />
           <p className={styles.primary__description}>I build things with software.</p>
-          <p className={cx({
-            'primary__detail': open
+          <p className={cx('primary__detail', {
+            'primary__detail--closed': !open
           })}>I'm a software engineer based out of Minneapolis, MN and build web applications for desktop and mobile.
             </p>
           <Link to="/projects">
