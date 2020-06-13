@@ -4,7 +4,7 @@ import NavbarDesktop from './NavbarDesktop';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import './Navbar.css';
 
-const Navbar = ({ drawerToggleClickHandler }) => {
+const Navbar = ({ toggleSideDrawer }) => {
 
   return (
     <nav>
@@ -17,7 +17,7 @@ const Navbar = ({ drawerToggleClickHandler }) => {
         <div className="nav-right">
           <div className="menu--mobile">
             {/* Mobile/Tablet menu icon */}
-            <DrawerToggleButton click={drawerToggleClickHandler} />
+            <DrawerToggleButton click={toggleSideDrawer} />
           </div>
           <div className="menu--desktop">
             <NavbarDesktop />
