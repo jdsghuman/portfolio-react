@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import className from 'classnames/bind';
+import Spinner from '../../Shared/Spinner/Spinner'
+import styles from './ImageDisplay.module.scss';
+
+const cx = className.bind(styles);
 
 const ImageDisplay = ({ thumbnail }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -9,8 +14,11 @@ const ImageDisplay = ({ thumbnail }) => {
 
   return (
     <>
-      {!isLoaded && <div className="loader"></div>}
-      <img className={isLoaded ? 'project-item__img' : ''} style={isLoaded ? {} : { display: 'none' }} alt="project" src={thumbnail} onLoad={imageLoaded} />
+      {!isLoaded && <Spinner />}
+      <img className={cx({
+        'img': isLoaded,
+        'img--hide': !isLoaded
+      })} alt="project" src={thumbnail} onLoad={imageLoaded} />
     </>
   );
 }
