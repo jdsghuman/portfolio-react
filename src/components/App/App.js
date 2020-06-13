@@ -1,61 +1,53 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Container from '../Container/Container';
 import { BrowserRouter as Router } from 'react-router-dom';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import Backdrop from '../Backdrop/Backdrop';
-import createHistory from 'history/createBrowserHistory'
+import { createBrowserHistory } from 'history'
 import ReactGA from 'react-ga';
 
 import './App.css';
 
-const history = createHistory()
-history.listen(location => {
-	ReactGA.set({ page: location.pathname })
-	ReactGA.pageview(location.pathname)
+ReactGA.initialize('UA-78377127-1')
+const history = createBrowserHistory();
+history.listen((location, action) => {
+  ReactGA.pageview(location.pathname + location.search)
 })
 
-class App extends Component {
-  state = {
-    sidedrawerOpen: false
+const App = () => {
+  const [sidedrawerOpen, setSidedrawerOpen] = useState(false);
+
+  const closeBackdrop = () => {
+    setSidedrawerOpen(false)
+  }
+
+  const toggleSideDrawer = () => {
+    setSidedrawerOpen(!sidedrawerOpen)
   };
 
-  componentDidMount() {
-    ReactGA.pageview(window.location.pathname)
+  let backdrop;
+
+  if (sidedrawerOpen) {
+    backdrop = <Backdrop click={closeBackdrop} />;
   }
 
-  backdropClickHandler = () => {
-    this.setState({ sidedrawerOpen: false });
-  }
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
 
-  drawerToggleClickHandler = () => {
-    this.setState((prevState) => {
-      return { sidedrawerOpen: !prevState.sidedrawerOpen }
-    });
-  };
-
-  closeDrawer = () => {
-    this.setState({ sidedrawerOpen: false });
-  }
-  render() {
-    let backdrop;
-
-    if (this.state.sidedrawerOpen) {
-      backdrop = <Backdrop click={this.backdropClickHandler} />;
-    }
-    return (
-      <div className="App">
-        <Router>
-          <>
-            <Navbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
-            <SideDrawer show={this.state.sidedrawerOpen} click={this.backdropClickHandler} />
-            {backdrop}
-            <Container />
-          </>
-        </Router>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <Router>
+        <>
+          <Navbar toggleSideDrawer={toggleSideDrawer} />
+          <SideDrawer show={sidedrawerOpen} click={closeBackdrop} />
+          {backdrop}
+          <Container />
+        </>
+      </Router>
+    </div>
+  );
 }
 
 export default App;

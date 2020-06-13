@@ -10,86 +10,13 @@ p {
   font-family: 'PT Mono', monospace;
 }
 
-.primary__intro {
-  margin-bottom: 0;
-  font-size: 1.2rem;
-  letter-spacing: .2px;
-  color: #2cbadb;
-  animation: intro .3s ease-out .3s backwards;
-}
-
-@keyframes intro {
-  0% {
-    transform: translateY(-1500%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-
-.primary__name {
-  display: inline-block;
-  font-size: 4rem;
-  margin: 0;
-  margin-top: 4px;
-  font-family: 'Maven Pro', sans-serif;
-  background-color: #2cbadb;
-  padding: 6px;
-  border-radius: 2px;
-  animation: namejd .6s ease-out .3s backwards;
-}
-
-@keyframes namejd {
-  0% {
-    transform: translateX(-400%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-.primary__description {
-  font-family: 'Maven Pro', sans-serif;
-  background-color: rgb(3, 31, 37);
-  color: #2cbadb;
-  font-size: 2.6rem;
-  margin-top: 0;
-  margin-bottom: 28px;
-  display: inline-block;
-  padding: 8px;
-  border-radius: 2px;
-  animation: description .75s ease-out .3s backwards;
-}
-
-@keyframes description {
-  0% {
-    transform: translateX(500%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
 .btn--dark {
   margin-bottom: 80px;
-}
-
-.primary__detail {
-  width: 60%;
-  margin-bottom: 48px;
-  line-height: 1.4;
-  color: #ffffff;
 }
 
 @media only screen and (max-width: 500px) {
   .large-hero__text-content {
     transform: translateY(10%);
-  }
-  .primary__intro {
-    font-size: 1.4rem;
-  }
-  .primary__name {
-    line-height: .9;
   }
   .primary__button--mobile {
     border: 2px solid red;

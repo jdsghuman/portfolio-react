@@ -1,0 +1,18 @@
+.img {
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 400px;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: #2cbadb;
+  @media (max-width: 590px) {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 90%;
+  }
+  &--hide {
+    display: none;
+  }
+}
