@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import InteractiveButtons from '../InteractiveButtons/InteractiveButtons';
 import Terminal from '../Terminal/Terminal';
 import HomeDetail from '../HomeDetail/HomeDetail';
-
+import Spinner from '../Shared/Spinner/Spinner'
 import './Home.css';
 
 const Home = () => {
@@ -12,6 +12,7 @@ const Home = () => {
   const [minimize, setMinimize] = useState(false);
   const [open, setOpen] = useState(true);
   const [page] = useState('home');
+  const [restart, setRestart] = useState(false);
 
   const maximizeTerminal = () => setMaximize(true);
 
@@ -24,6 +25,11 @@ const Home = () => {
     setMaximize(false);
     if (open && minimize) {
       history.push('/');
+      setRestart(true)
+      setTimeout(() => {
+        setRestart(false)
+        window.location.reload();
+      }, 1500)
     }
   };
 
@@ -38,6 +44,12 @@ const Home = () => {
             open={open}
             page="home" />
           <HomeDetail minimize={minimize} open={open} />
+          {restart && (
+            <>
+              <Spinner />
+              <p className={'text__restart'}>Restarting Terminal...</p>
+            </>
+          )}
           <Terminal clear={minimizeTerminal} page={page} openTerminal={open} />
         </div>
       </div>
