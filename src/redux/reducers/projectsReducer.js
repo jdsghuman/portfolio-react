@@ -5,9 +5,10 @@ const projects = [
     id: 1,
     name: 'Bobbieleelicious',
     description: 'Full stack recipe application with responsive design for Mobile and Web that includes a Node backend.',
-    thumbnail: 'images/login.png',
+    thumbnail: 'images/recipes.jpg',
     website: 'https://www.bobbieleelicious.com',
     github: 'https://github.com/jdsghuman/solo-project-bobbieleelicious',
+    privateRepo: true,
     tags: ['React', 'Redux-Saga', 'Node', 'Express', 'PostgreSQL', 'Heroku']
   },
   {
@@ -17,6 +18,7 @@ const projects = [
     thumbnail: 'images/feedback.png',
     website: '',
     github: 'https://github.com/jdsghuman/weekend-challenge-5-feedback',
+    privateRepo: false,
     tags: ['React', 'Node', 'Express', 'PostgresSQL']
   },
   {
@@ -26,6 +28,7 @@ const projects = [
     thumbnail: 'images/jdghuman.png',
     website: '',
     github: 'https://github.com/jdsghuman/portfolio-react',
+    privateRepo: false,
     tags: ['React', 'Redux']
   }
 ]

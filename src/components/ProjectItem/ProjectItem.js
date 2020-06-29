@@ -1,7 +1,10 @@
 import React from 'react';
+import className from 'classnames/bind';
 import Button from '../Button/Button';
 import ImageDisplay from './ImageDisplay/ImageDisplay';
 import styles from './ProjectItem.module.scss';
+
+const cx = className.bind(styles);
 
 const ProjectItem = ({ project }) => {
     return (
@@ -11,7 +14,9 @@ const ProjectItem = ({ project }) => {
           <ImageDisplay thumbnail={project.thumbnail} />
           <div className={styles['project-item__button-container']}>
             {project.github &&
-              <Button url={project.github} classes="btn btn__project">GitHub</Button>
+              <Button url={project.github} classes={cx('btn btn__project', {
+                'btn__private': project.privateRepo
+              })}>{project.privateRepo ? 'Private Repo' : 'GitHub'}</Button>
             }
             {project.website &&
               <Button url={project.website} classes="btn btn__project">{project.name}</Button>
