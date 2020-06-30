@@ -1,22 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import { Link, useLocation } from 'react-router-dom';
 import NavbarDesktop from './NavbarDesktop/NavbarDesktop';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 import styles from './Navbar.module.scss';
 
-const Navbar = ({ toggleSideDrawer }) => {
-  let history = useHistory();
-
-  const reset = () => {
-    history.push('/');
+const Navbar = ({ match, toggleSideDrawer }) => {
+  let location = useLocation();
+  
+  const goToHomePage = () => {
+    location.pathname === '/' && window.location.reload();
   }
   return (
     <nav>
       <div className={styles.nav}>
         <div>
-          <Link to="/">
-            <img onClick={reset} className={styles.nav__image} src="/images/JD-Develop-white.png" alt="Logo" />
+          <Link to="/" onClick={goToHomePage}>
+            <img className={styles.nav__image} src="/images/JD-Develop-white.png" alt="Logo" />
           </Link>
         </div>
         <div className={styles.nav__right}>
@@ -25,7 +24,7 @@ const Navbar = ({ toggleSideDrawer }) => {
             <DrawerToggleButton click={toggleSideDrawer} />
           </div>
           <div className={styles.nav__desktop}>
-            <NavbarDesktop />
+            <NavbarDesktop goToHomePage={goToHomePage} />
           </div>
         </div>
       </div>

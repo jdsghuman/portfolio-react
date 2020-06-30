@@ -5,7 +5,7 @@ import styles from './ImageDisplay.module.scss';
 
 const cx = className.bind(styles);
 
-const ImageDisplay = ({ thumbnail }) => {
+const ImageDisplay = ({ showModal, thumbnail }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const imageLoaded = () => {
@@ -13,13 +13,13 @@ const ImageDisplay = ({ thumbnail }) => {
   }
 
   return (
-    <>
+    <div onClick={showModal} className={styles.image__container}>
       {!isLoaded && <Spinner />}
-      <img className={cx({
-        'img': isLoaded,
-        'img--hide': !isLoaded
+      <img className={cx('image__display',{
+        'image--show': isLoaded,
+        'image--hide': !isLoaded
       })} alt="project" src={thumbnail} onLoad={imageLoaded} />
-    </>
+    </div>
   );
 }
 

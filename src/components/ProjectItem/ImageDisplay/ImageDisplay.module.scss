@@ -1,16 +1,30 @@
-.img {
-  display: block;
-  margin-bottom: 30px;
-  text-align: center;
-  width: 400px;
-  height: auto;
-  border: 1px solid black;
-  border-radius: 2px;
-  background-color: #2cbadb;
-  @media (max-width: 590px) {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 90%;
+.image {
+  &__container {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+  &__display {
+    @media (max-width: 590px) {
+      // margin-right: 0;
+      // margin-bottom: 10px;
+      max-width: 90%;
+      margin: 0 auto;
+      height: auto;
+    }
+  }
+  &--show {
+    display: block;
+    text-align: center;
+    width: 400px;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #2cbadb;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
   &--hide {
     display: none;
