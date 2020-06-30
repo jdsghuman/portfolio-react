@@ -48,7 +48,7 @@ const Terminal = ({ clear, history, location, openTerminal, page }) => {
         break;
       case enteredText.includes('cd resume'):
         history.push('/about');
-        window.location.replace("https://jdghuman.com/#/resume.pdf");
+        window.location.replace("https://jdghuman.com/resume.pdf");
         break;
       case enteredText.includes('exit'):
         window.location.replace("https://jdghuman.com/exit");

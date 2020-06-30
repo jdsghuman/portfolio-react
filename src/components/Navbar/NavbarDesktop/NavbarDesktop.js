@@ -33,7 +33,7 @@ const navbarDesktop = ({ goToHomePage }) => (
       </li>
       <li className={styles.nav__list}>
         <a className={styles['nav__desktop__resume']}
-          href="/#/resume.pdf"
+          href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer">
           <Button classes="btn">Resume</Button>
