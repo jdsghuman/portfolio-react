@@ -3,12 +3,13 @@ import { NavLink } from 'react-router-dom';
 import Button from '../../Button/Button';
 import styles from './NavbarDesktop.module.scss';
 
-const navbarDesktop = () => (
+const navbarDesktop = ({ goToHomePage }) => (
   <>
     <ul className={styles.nav__container}>
       <li className={styles.nav__list}>
         <NavLink
           to="/"
+          onClick={goToHomePage}
           exact
           className={styles.nav__link}
           activeClassName={styles['nav__link--active']}>
@@ -43,4 +44,3 @@ const navbarDesktop = () => (
 )
 
 export default navbarDesktop;
-

@@ -33,3 +33,9 @@ section {
     padding-right: 8px;
   }
 }
+
+.img-modal {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+}
