@@ -8,7 +8,7 @@
   margin-bottom: 100px;
   padding: 40px;
   color: #2cbadb;
-  font-family: 'PT Mono', monospace;
+  font-family: "PT Mono", monospace;
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.4;
@@ -21,7 +21,7 @@
 .about__container--maximize {
   width: 100%;
   max-width: 1400px;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .about__description {
@@ -44,33 +44,34 @@
 }
 
 .about__links {
-  text-align: center;
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .terminal {
   display: inline;
-  overflow: hidden; 
-  border-right: 2px solid #2cbadb; 
+  overflow: hidden;
+  border-right: 2px solid #2cbadb;
   padding-right: 6px;
-  animation: blink .75s step-end infinite;
+  animation: blink 0.75s step-end infinite;
 }
 
 /* The typewriter cursor effect */
 @keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: #2cbadb; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #2cbadb;
+  }
 }
 
 @media only screen and (max-width: 800px) {
   .about__container {
-    width:85%;
+    width: 85%;
     padding: 20px;
-  }
-
-  .about__links {
-    flex-direction: row;
-    margin-bottom: 30px;
   }
 
   .link__email {

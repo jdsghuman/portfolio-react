@@ -38,15 +38,17 @@ const About = () => {
             </div>
             <div>
               <p>
-                I am a Full Stack Software Engineer with a background in software automation,
+                I am a Full Stack Software Engineer who loves to code and build things,
                 located in Minneapolis, MN. I enjoy turning concepts and designs into
                 front end UI and solving complex problems with code.
               </p>
             </div>
+            <div>
+            </div>
             <div style={{ marginTop: '40px' }}>
               <p>
                 When I am not building web applications or coding,
-                I can be found hanging out with my family, walking my yappy dog,
+                I can be found hanging out with my family, building something in the garage,
                 or drinking coffee…. I’m always drinking coffee!
               </p>
             </div>
