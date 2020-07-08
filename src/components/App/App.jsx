@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import ReactGA from 'react-ga';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import ReactGA from 'react-ga'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
-import Navbar from '../Navbar/Navbar';
-import SideDrawer from '../SideDrawer/SideDrawer';
-import Backdrop from '../Backdrop/Backdrop';
-import Footer from '../Footer/Footer';
-import Home from '../Home/Home';
-import ProjectList from '../ProjectList/ProjectList';
-import About from '../About/About';
-import Title from '../Title/Title';
-import './App.css';
+import Navbar from '../Navbar/Navbar'
+import SideDrawer from '../SideDrawer/SideDrawer'
+import Backdrop from '../Backdrop/Backdrop'
+import Footer from '../Footer/Footer'
+import Home from '../Home/Home'
+import ProjectList from '../ProjectList/ProjectList'
+import About from '../About/About'
+import Title from '../Title/Title'
+import './App.css'
 
 ReactGA.initialize('UA-78377127-1')
-const history = createBrowserHistory();
+const history = createBrowserHistory()
+// eslint-disable-next-line no-unused-vars
 history.listen((location, action) => {
   ReactGA.pageview(location.pathname + location.search)
 })
 
 const App = () => {
-  const [sidedrawerOpen, setSidedrawerOpen] = useState(false);
+  const [sidedrawerOpen, setSidedrawerOpen] = useState(false)
 
   const closeBackdrop = () => {
     setSidedrawerOpen(false)
@@ -27,21 +28,21 @@ const App = () => {
 
   const toggleSideDrawer = () => {
     setSidedrawerOpen(!sidedrawerOpen)
-  };
+  }
 
-  let backdrop;
+  let backdrop
 
   if (sidedrawerOpen) {
-    backdrop = <Backdrop click={closeBackdrop} />;
+    backdrop = <Backdrop click={closeBackdrop} />
   }
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview(window.location.pathname + window.location.search)
   }, [])
 
   return (
     <div className="App">
-      <Router>
+      <Router history={history}>
         <>
           <Navbar toggleSideDrawer={toggleSideDrawer} />
           <SideDrawer show={sidedrawerOpen} click={closeBackdrop} />
@@ -56,7 +57,7 @@ const App = () => {
         </>
       </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

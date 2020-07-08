@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App/App.js';
+import App from './components/App/App.jsx';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
@@ -15,4 +15,4 @@ const store = createStore(rootReducer, /* preloadedState, */ composeEnhancers(
 
 ReactDOM.render(<Provider store={store}><App /></Provider>,
     document.getElementById('root'));
-registerServiceWorker();
+registerServiceWorker()
