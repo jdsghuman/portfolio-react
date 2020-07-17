@@ -1,10 +1,11 @@
 /* eslint-disable no-case-declarations */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import './Terminal.css'
 
 const Terminal = ({ clear, history, location, openTerminal, page }) => {
+  const inputRef = useRef(null)
   const [clickedTerminal, setClickedTerminal] = useState(false)
   const [command, setCommand] = useState('')
 
@@ -124,6 +125,10 @@ const Terminal = ({ clear, history, location, openTerminal, page }) => {
     }
   }
 
+  useEffect(() => {
+    inputRef.current.focus()
+  })
+
   return (
     <div
       className={
@@ -150,11 +155,12 @@ const Terminal = ({ clear, history, location, openTerminal, page }) => {
       {openTerminal && page === 'home' && (
         <>
           <label
-            className={
-              !clickedTerminal
-                ? 'static-value'
-                : 'static-value terminal__blink--clicked'
-            }
+            className="static-value"
+            // className={
+            //   !clickedTerminal && command !== ''
+            //     ? 'static-value'
+            //     : 'static-value'
+            // }
           >
             >>
           </label>
@@ -163,6 +169,7 @@ const Terminal = ({ clear, history, location, openTerminal, page }) => {
             autoComplete="off"
             autoCapitalize="none"
             spellCheck="false"
+            ref={inputRef}
           />
         </>
       )}
@@ -170,7 +177,7 @@ const Terminal = ({ clear, history, location, openTerminal, page }) => {
         <>
           <label
             className={
-              !clickedTerminal
+              !clickedTerminal && command !== ''
                 ? 'static-value'
                 : 'static-value terminal__blink--clicked'
             }
@@ -182,6 +189,7 @@ const Terminal = ({ clear, history, location, openTerminal, page }) => {
             autoComplete="off"
             autoCapitalize="none"
             spellCheck="false"
+            ref={inputRef}
           />
         </>
       )}

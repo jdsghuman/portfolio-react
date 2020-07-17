@@ -31,8 +31,8 @@
 	color:#2cbadb;
   width: 25px;
   padding-right: 4px;
-  animation: blink .75s step-end infinite;
-  border-right: 1px solid #2cbadb;
+  /* animation: blink .75s step-end infinite; */
+  /* border-right: 1px solid #2cbadb; */
 }
 
 .terminal__blink--clicked {

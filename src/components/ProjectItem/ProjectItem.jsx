@@ -15,6 +15,7 @@ const tagStyles = {
   borderRadius: '5px',
   color: '#2cbadb',
   fontSize: '.8rem',
+  fontFamily: 'PT Mono, monospace',
 }
 
 const ProjectItem = ({ project }) => {

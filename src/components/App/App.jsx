@@ -14,9 +14,10 @@ import './App.css'
 
 ReactGA.initialize('UA-78377127-1')
 const history = createBrowserHistory()
-// eslint-disable-next-line no-unused-vars
-history.listen((location, action) => {
-  ReactGA.pageview(location.pathname + location.search)
+
+history.listen(location => {
+  ReactGA.set({ page: location.pathname })
+  ReactGA.pageview(location.pathname)
 })
 
 const App = () => {

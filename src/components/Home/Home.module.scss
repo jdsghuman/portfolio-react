@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:700');
+
+.home {
+  font-family: 'PT Mono', monospace;
+  &__wrapper {
+    margin: 0 auto;
+    padding-left: 18px;
+    padding-right: 18px;
+    max-width: 900px;
+    min-width: 60%;
+    min-height: 100%;
+    @media only screen and (max-width: 500px) {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  &__wrapper__maximize {
+    width: 100%;
+    transform: scaleX(1);
+    margin: 0 auto;
+    max-width: 1400px;
+    padding-left: 0;
+    padding-right: 0;
+    transition: all 0.3s ease-out;
+  }
+  &__large-hero__text-content {
+    transform: translateY(10%);
+    left: 0;
+    max-width: 98%;
+    @media only screen and (max-width: 500px) {
+      transform: translateY(10%);
+    }
+    @media all and (orientation: landscape) {
+      transform: translateY(10%);
+    }
+    @media only screen and (min-height: 540px) and (min-width: 580px) {
+      background-color: rgba(3, 41, 57, 1);
+      padding: 40px 40px;
+      border-radius: 5px;
+      border-top: 30px solid #dddddd;
+      margin-bottom: 80px;
+      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+    }
+    @media only screen and (min-height: 700px) {
+      transform: translateY(10%);
+    }
+  }
+  &__large-hero__text-content--closed {
+    background-color: none;
+    box-shadow: none;
+    border-top: none;
+    margin-top: 150px;
+  }
+  &__text--restart {
+    margin-top: 0;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'PT Mono', monospace;
+  }
+}

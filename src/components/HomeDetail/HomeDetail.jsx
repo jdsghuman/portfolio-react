@@ -21,7 +21,7 @@ const HomeDetail = ({ minimize, open }) => (
             'primary__detail--closed': !open,
           })}
         >
-          I'm a software engineer based out of Minneapolis, MN and build web
+          I'm a software engineer based out of Houston, TX and build web
           applications for desktop and mobile.
         </p>
         <Link to="/projects">
