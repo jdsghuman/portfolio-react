@@ -127,7 +127,7 @@ const Terminal = ({ clear, history, location, openTerminal, page }) => {
 
   useEffect(() => {
     inputRef.current.focus()
-  })
+  }, [])
 
   return (
     <div
@@ -154,16 +154,7 @@ const Terminal = ({ clear, history, location, openTerminal, page }) => {
       )}
       {openTerminal && page === 'home' && (
         <>
-          <label
-            className="static-value"
-            // className={
-            //   !clickedTerminal && command !== ''
-            //     ? 'static-value'
-            //     : 'static-value'
-            // }
-          >
-            >>
-          </label>
+          <label className="static-value">>></label>
           <input
             className="terminal__input-border"
             autoComplete="off"
