@@ -5,12 +5,12 @@ const projects = [
     id: 1,
     name: 'Bobbieleelicious',
     description:
-      'Full stack recipe application with responsive design for Mobile and Web that includes a Node backend.',
+      'A modern blog built with Static Site Generation (SSG), Next.js, and TypeScript, using Contentful as the headless CMS.',
     thumbnail: 'images/recipes.jpg',
     website: 'https://www.bobbieleelicious.com',
     github: 'https://github.com/jdsghuman/solo-project-bobbieleelicious',
     privateRepo: true,
-    tags: ['React', 'Redux-Saga', 'Node', 'Express', 'PostgreSQL', 'Heroku'],
+    tags: ['Next.js', 'TypeScript', 'Context API', 'Headless CMS', 'Vercel'],
   },
   {
     id: 2,
